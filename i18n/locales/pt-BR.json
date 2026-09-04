@@ -1,0 +1,149 @@
+{
+  "form": {
+    "title": "Fatura",
+    "description": "Gerar Fatura",
+    "newInvBadge": "Nova Fatura",
+    "wizard": {
+      "fromAndTo": "De & Para",
+      "invoiceDetails": "Detalhes da Fatura",
+      "lineItems": "Itens",
+      "paymentInfo": "Informações de Pagamento",
+      "summary": "Resumo",
+      "next": "Próximo",
+      "back": "Voltar",
+      "upNext": "A seguir",
+      "sections": "Seções"
+    },
+    "steps": {
+      "fromAndTo": {
+        "billFrom": "Emitido Por",
+        "billTo": "Faturado Para",
+        "name": "Nome",
+        "namePlaceholder": "Seu nome",
+        "address": "Endereço",
+        "addressPlaceholder": "Seu endereço",
+        "zipCode": "CEP",
+        "zipCodePlaceholder": "Seu CEP",
+        "city": "Cidade",
+        "cityPlaceholder": "Sua cidade",
+        "country": "País",
+        "countryPlaceholder": "Seu país",
+        "email": "Email",
+        "emailPlaceholder": "Seu email",
+        "phone": "Telefone",
+        "phonePlaceholder": "Seu telefone",
+        "addCustomInput": "Adicionar Campo Personalizado",
+        "sender": "Remetente",
+        "receiver": "Destinatário"
+      },
+      "invoiceDetails": {
+        "heading": "Detalhes da Fatura",
+        "invoiceLogo": {
+          "label": "Logo da Fatura",
+          "placeholder": "Clique para fazer upload da imagem"
+        },
+        "invoiceNumber": "Número da Fatura",
+        "issuedDate": "Data de Emissão",
+        "dueDate": "Data de Vencimento",
+        "currency": "Moeda"
+      },
+      "lineItems": {
+        "heading": "Itens",
+        "item": "Item",
+        "name": "Nome",
+        "quantity": "Quantidade",
+        "rate": "Taxa",
+        "total": "Total",
+        "description": "Descrição",
+        "addNewItem": "Adicionar um novo item",
+        "removeItem": "Remover item"
+      },
+      "paymentInfo": {
+        "heading": "Informações de Pagamento",
+        "bankName": "Nome do Banco",
+        "accountName": "Nome da Conta",
+        "accountNumber": "Número da Conta"
+      },
+      "summary": {
+        "heading": "Resumo",
+        "signature": {
+          "heading": "Assinatura",
+          "placeholder": "Clique para adicionar assinatura",
+          "description": "Escolha um método para adicionar sua assinatura à fatura",
+          "draw": "Desenhar",
+          "type": "Digitar",
+          "upload": "Fazer upload"
+        },
+        "additionalNotes": "Notas Adicionais",
+        "paymentTerms": "Condições de Pagamento",
+        "discount": "Desconto",
+        "tax": "Imposto",
+        "shipping": "Frete",
+        "subTotal": "Subtotal",
+        "totalAmount": "Valor Total",
+        "includeTotalInWords": "Incluir Total por Extenso?",
+        "yes": "Sim",
+        "no": "Não",
+        "terms": {
+          "dueOnReceipt": "Pagamento na entrega",
+          "net15": "15 dias",
+          "net30": "30 dias",
+          "net60": "60 dias"
+        }
+      }
+    },
+    "autosave": {
+      "saving": "Salvando…",
+      "saved": "Salvo",
+      "justNow": "agora mesmo"
+    }
+  },
+  "actions": {
+    "title": "Ações",
+    "description": "Operações e visualização",
+    "loadInvoice": "Carregar Fatura",
+    "exportInvoice": "Exportar Fatura",
+    "newInvoice": "Nova Fatura",
+    "generatePdf": "Gerar PDF",
+    "pdfView": "Visualização em PDF",
+    "fitToScreen": "Ajustar à tela",
+    "actualSize": "Tamanho real"
+  },
+  "footer": {
+    "developedBy": "Desenvolvido por",
+    "guide": "Como funciona"
+  },
+  "invoiceDocument": {
+    "invoiceNumber": "Fatura n.º",
+    "from": "De",
+    "billTo": "Faturar para",
+    "invoiceDate": "Data da fatura",
+    "dueDate": "Vencimento",
+    "item": "Descrição",
+    "qty": "Qtd.",
+    "rate": "Preço",
+    "amount": "Valor",
+    "subtotal": "Subtotal",
+    "discount": "Desconto",
+    "tax": "Impostos",
+    "shipping": "Frete",
+    "total": "Total",
+    "totalInWords": "Total por extenso",
+    "additionalNotes": "Observações",
+    "paymentTerms": "Condições de pagamento",
+    "signature": "Assinatura",
+    "paymentInfoHeading": "Envie o pagamento para os seguintes dados",
+    "bankName": "Banco",
+    "accountName": "Titular da conta",
+    "accountNumber": "N.º da conta",
+    "contactHeading": "Em caso de dúvidas sobre esta fatura, utilize os seguintes contatos:",
+    "logoAlt": "Logotipo de {name}",
+    "signatureAlt": "Assinatura de {name}"
+  },
+  "meta": {
+    "title": "Gerador de faturas gratuito | Invoify",
+    "description": "Crie uma fatura profissional em minutos. Treze modelos, suas cores e seu logotipo, e um PDF para baixar ou enviar por e-mail. Grátis, sem cadastro.",
+    "ogTitle": "Gerador de faturas gratuito",
+    "ogDescription": "Treze modelos. Preencha e baixe o PDF. Sem cadastro."
+  }
+}

@@ -1,0 +1,10 @@
+node_modules
+.next
+out
+build
+coverage
+package-lock.json
+public/assets/data
+i18n/locales
+*.min.css
+*.min.js

@@ -1,0 +1,142 @@
+{
+  "form": {
+    "title": "Faktura",
+    "description": "Generer faktura",
+    "newInvBadge": "Ny faktura",
+    "wizard": {
+      "fromAndTo": "Frå & til",
+      "invoiceDetails": "Fakturadetaljar",
+      "lineItems": "Varelinjer",
+      "paymentInfo": "Betalingsinformasjon",
+      "summary": "Samandrag",
+      "next": "Neste",
+      "back": "Tilbake",
+      "upNext": "Neste",
+      "sections": "Delar"
+    },
+    "steps": {
+      "fromAndTo": {
+        "billFrom": "Faktura frå",
+        "billTo": "Faktura til",
+        "name": "Namn",
+        "address": "Adresse",
+        "zipCode": "Postnummer",
+        "city": "By",
+        "country": "Land",
+        "email": "E-post",
+        "phone": "Telefon",
+        "addCustomInput": "Legg til eige felt",
+        "sender": "Avsendar",
+        "receiver": "Mottakar"
+      },
+      "invoiceDetails": {
+        "heading": "Fakturadetaljar",
+        "invoiceLogo": {
+          "label": "Fakturalogo",
+          "placeholder": "Klikk for å laste opp bilete"
+        },
+        "invoiceNumber": "Fakturanummer",
+        "issuedDate": "Utferdingsdato",
+        "dueDate": "Forfallsdato",
+        "currency": "Valuta"
+      },
+      "lineItems": {
+        "heading": "Varer",
+        "item": "Vare",
+        "name": "Namn",
+        "quantity": "Mengd",
+        "rate": "Pris",
+        "total": "Totalt",
+        "description": "Skildring",
+        "addNewItem": "Legg til ny vare",
+        "removeItem": "Fjern vare"
+      },
+      "paymentInfo": {
+        "heading": "Betalingsinformasjon",
+        "bankName": "Banknamn",
+        "accountName": "Kontonamn",
+        "accountNumber": "Kontonummer"
+      },
+      "summary": {
+        "heading": "Samandrag",
+        "signature": {
+          "heading": "Signatur",
+          "placeholder": "Klikk for å legge til signatur",
+          "description": "Vel ein metode for å leggje til signaturen din på fakturaen",
+          "draw": "Teikn",
+          "type": "Skriv",
+          "upload": "Last opp"
+        },
+        "additionalNotes": "Tilleggsnotatar",
+        "paymentTerms": "Betalingsvilkår",
+        "discount": "Rabatt",
+        "tax": "MVA",
+        "shipping": "Frakt",
+        "subTotal": "Delsum",
+        "totalAmount": "Totalbeløp",
+        "includeTotalInWords": "Inkluder totalbeløp med ord?",
+        "yes": "Ja",
+        "no": "Nei",
+        "terms": {
+          "dueOnReceipt": "Betalast ved mottak",
+          "net15": "15 dagar",
+          "net30": "30 dagar",
+          "net60": "60 dagar"
+        }
+      }
+    },
+    "autosave": {
+      "saving": "Lagrar…",
+      "saved": "Lagra",
+      "justNow": "nettopp"
+    }
+  },
+  "actions": {
+    "title": "Handlingar",
+    "description": "Operasjonar og førehandsvising",
+    "loadInvoice": "Last inn faktura",
+    "exportInvoice": "Eksporter faktura",
+    "newInvoice": "Ny faktura",
+    "generatePdf": "Generer PDF",
+    "pdfView": "PDF-vising",
+    "fitToScreen": "Tilpass til skjermen",
+    "actualSize": "Faktisk storleik"
+  },
+  "footer": {
+    "developedBy": "Utvikla av",
+    "guide": "Slik fungerer det"
+  },
+  "invoiceDocument": {
+    "invoiceNumber": "Faktura nr.",
+    "from": "Frå",
+    "billTo": "Fakturerast til",
+    "invoiceDate": "Fakturadato",
+    "dueDate": "Forfallsdato",
+    "item": "Skildring",
+    "qty": "Tal",
+    "rate": "Pris",
+    "amount": "Beløp",
+    "subtotal": "Delsum",
+    "discount": "Rabatt",
+    "tax": "Mva.",
+    "shipping": "Frakt",
+    "total": "Totalt",
+    "totalInWords": "Totalt med bokstavar",
+    "additionalNotes": "Tilleggsnotat",
+    "paymentTerms": "Betalingsvilkår",
+    "signature": "Signatur",
+    "paymentInfoHeading": "Send betalinga til denne kontoen",
+    "bankName": "Bank",
+    "accountName": "Kontonamn",
+    "accountNumber": "Kontonummer",
+    "contactHeading": "Har du spørsmål om denne fakturaen, bruk kontaktinformasjonen nedanfor:",
+    "logoAlt": "Logo til {name}",
+    "signatureAlt": "Signatur til {name}"
+  },
+  "meta": {
+    "title": "Gratis fakturagenerator | Invoify",
+    "description": "Lag ein profesjonell faktura på minutt. Tretten malar, eigne fargar og logo, og ein PDF du kan lasta ned eller senda på e-post. Gratis, utan konto.",
+    "ogTitle": "Gratis fakturagenerator",
+    "ogDescription": "Tretten malar. Fyll ut, last ned PDF-en. Ingen konto."
+  }
+}

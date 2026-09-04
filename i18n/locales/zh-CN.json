@@ -1,0 +1,124 @@
+{
+  "form": {
+    "title": "发票",
+    "description": "创建发票",
+    "newInvBadge": "新发票",
+    "wizard": {
+      "fromAndTo": "发件人 & 收件人",
+      "invoiceDetails": "发票详情",
+      "lineItems": "项目明细",
+      "paymentInfo": "支付信息",
+      "summary": "摘要",
+      "next": "下一步",
+      "back": "返回",
+      "upNext": "下一步",
+      "sections": "章节"
+    },
+    "steps": {
+      "fromAndTo": {
+        "billFrom": "开票方",
+        "billTo": "收票方",
+        "name": "名称",
+        "address": "地址",
+        "zipCode": "邮编",
+        "city": "城市",
+        "country": "国家",
+        "email": "邮箱",
+        "phone": "电话",
+        "addCustomInput": "添加自定义输入",
+        "sender": "发件人",
+        "receiver": "收件人"
+      },
+      "invoiceDetails": {
+        "heading": "发票详情",
+        "invoiceLogo": {
+          "label": "发票Logo",
+          "placeholder": "点击上传图片"
+        },
+        "invoiceNumber": "发票编号",
+        "issuedDate": "开票日期",
+        "dueDate": "付款截止日",
+        "currency": "货币"
+      },
+      "lineItems": {
+        "heading": "项目明细",
+        "item": "项目",
+        "name": "名称",
+        "quantity": "数量",
+        "rate": "单价",
+        "total": "总价",
+        "description": "描述",
+        "addNewItem": "添加新项目",
+        "removeItem": "删除项目"
+      },
+      "paymentInfo": {
+        "heading": "支付信息",
+        "bankName": "银行名称",
+        "accountName": "账户名",
+        "accountNumber": "账号"
+      },
+      "summary": {
+        "heading": "摘要",
+        "signature": {
+          "heading": "签名",
+          "placeholder": "点击添加签名",
+          "description": "选择一种方法为发票添加签名",
+          "draw": "手写",
+          "type": "输入",
+          "upload": "上传"
+        },
+        "additionalNotes": "附加说明",
+        "paymentTerms": "付款条款",
+        "discount": "折扣",
+        "tax": "税费",
+        "shipping": "运费",
+        "subTotal": "小计",
+        "totalAmount": "总金额",
+        "includeTotalInWords": "用文字显示总金额？",
+        "yes": "是",
+        "no": "否"
+      }
+    }
+  },
+  "actions": {
+    "title": "操作",
+    "description": "处理与预览",
+    "loadInvoice": "加载发票",
+    "exportInvoice": "导出发票",
+    "newInvoice": "新建发票",
+    "generatePdf": "生成PDF",
+    "pdfView": "PDF视图"
+  },
+  "footer": {
+    "developedBy": "开发人员",
+    "guide": "使用方法"
+  },
+  "voiceInput": {
+    "voiceInput": "语音录入",
+    "tooltip": "使用语音识别快速录入商品明细",
+    "title": "语音录入商品明细",
+    "description": "点击录音按钮开始说话，系统将自动识别并解析商品信息。",
+    "notSupported": "您的浏览器不支持语音识别功能，请使用 Chrome 浏览器。",
+    "error": "语音识别出错",
+    "microphoneDenied": "请允许麦克风权限后重试",
+    "noMicrophone": "未检测到麦克风设备",
+    "networkError": "网络连接错误，请检查网络",
+    "initFailed": "语音识别初始化失败",
+    "startFailed": "无法启动语音识别，请重试",
+    "emptyText": "请先录入语音内容",
+    "noItemsParsed": "未能识别出商品信息，请重新录入",
+    "browserHint": "浏览器不支持语音识别",
+    "useChrome": "请使用 Chrome 浏览器以使用语音识别功能，或手动在下方输入文本进行解析。",
+    "manualInput": "手动输入文本",
+    "manualPlaceholder": "例如：苹果3个单价5元，笔记本电脑2台单价8000元",
+    "listening": "正在聆听...",
+    "transcript": "识别文本",
+    "clear": "清除",
+    "continueRecording": "继续录音",
+    "parse": "解析商品",
+    "parsedItems": "解析结果",
+    "item": "商品",
+    "cancel": "取消",
+    "confirm": "确认添加"
+  }
+}

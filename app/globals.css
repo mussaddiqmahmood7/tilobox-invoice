@@ -1,0 +1,168 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --background: 240 25% 98%;
+        /*
+         * The tinted ground the invoice paper floats on, in the preview pane.
+         * Deliberately its own token rather than --muted, which is already the
+         * resting fill of every input; the two need to move independently.
+         */
+        --ground: 240 20% 93.5%;
+        --foreground: 224 44% 12%;
+
+        --card: 0 0% 100%;
+        --card-foreground: 224 44% 12%;
+
+        --popover: 0 0% 100%;
+        --popover-foreground: 224 44% 12%;
+
+        --primary: 248 78% 60%;
+        --primary-foreground: 0 0% 100%;
+
+        --secondary: 240 20% 95%;
+        --secondary-foreground: 224 40% 20%;
+
+        --muted: 240 20% 95.5%;
+        --muted-foreground: 232 12% 46%;
+
+        --accent: 248 70% 96%;
+        --accent-foreground: 248 60% 38%;
+
+        --destructive: 0 78% 56%;
+        --destructive-foreground: 0 0% 100%;
+
+        --success: 152 62% 38%;
+        --success-foreground: 0 0% 100%;
+
+        --warning: 38 92% 48%;
+        --warning-foreground: 30 60% 12%;
+
+        --border: 240 16% 90%;
+        --input: 240 16% 88%;
+        --ring: 248 78% 60%;
+
+        --radius: 0.75rem;
+    }
+
+    .dark {
+        --background: 235 30% 9%;
+        /* Darker than the surface in dark mode, so the paper still lifts. */
+        --ground: 235 32% 7%;
+        --foreground: 240 20% 96%;
+
+        --card: 235 27% 12%;
+        --card-foreground: 240 20% 96%;
+
+        --popover: 235 27% 12%;
+        --popover-foreground: 240 20% 96%;
+
+        --primary: 250 85% 70%;
+        --primary-foreground: 235 45% 10%;
+
+        --secondary: 235 20% 18%;
+        --secondary-foreground: 240 20% 94%;
+
+        --muted: 235 20% 17%;
+        --muted-foreground: 235 12% 65%;
+
+        --accent: 250 40% 22%;
+        --accent-foreground: 250 80% 85%;
+
+        --destructive: 0 70% 58%;
+        --destructive-foreground: 0 0% 100%;
+
+        --success: 152 55% 46%;
+        --success-foreground: 152 80% 8%;
+
+        --warning: 38 90% 58%;
+        --warning-foreground: 30 60% 10%;
+
+        --border: 235 18% 22%;
+        --input: 235 18% 24%;
+        --ring: 250 85% 70%;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+
+    body {
+        @apply bg-background text-foreground;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+    }
+
+    /*
+     * Accessible focus: no ring for mouse users, a clear one for keyboard users.
+     * Replaces the previous blanket `:focus { outline: none }`, which removed
+     * focus indication for everyone.
+     */
+    :focus-visible {
+        @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+    }
+}
+
+@layer utilities {
+    /* Respects the iOS home indicator / notch on the sticky mobile action bar. */
+    .pb-safe {
+        padding-bottom: env(safe-area-inset-bottom, 0px);
+    }
+
+    .mb-safe {
+        margin-bottom: env(safe-area-inset-bottom, 0px);
+    }
+
+    /* Horizontal scrollers (stepper, template picker) without a visible bar. */
+    .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+/* For Customized Calendar */
+.rdp-vhidden {
+    @apply hidden;
+}
+
+/*
+ * Click-to-edit affordance on the live preview.
+ *
+ * Scoped to `.invoice-live-preview`, so the identical template markup rendered
+ * into the PDF or into a gallery miniature stays completely inert. The parts
+ * carry `data-edit-field` attributes naming the form field behind them; see
+ * app/components/invoice/actions/LivePreview.tsx
+ */
+.invoice-live-preview [data-edit-field] {
+  cursor: pointer;
+  border-radius: 0.375rem;
+  /* Outline rather than border, so nothing shifts when it appears. */
+  outline: 2px solid transparent;
+  outline-offset: 3px;
+  transition: outline-color 120ms ease, background-color 120ms ease;
+}
+
+.invoice-live-preview [data-edit-field]:hover {
+  outline-color: hsl(var(--primary) / 0.5);
+  background-color: hsl(var(--primary) / 0.04);
+}
+
+/* A nested region should not also light up its parent. */
+.invoice-live-preview [data-edit-field]:hover [data-edit-field]:not(:hover) {
+  outline-color: transparent;
+  background-color: transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .invoice-live-preview [data-edit-field] {
+    transition: none;
+  }
+}

@@ -1,0 +1,308 @@
+{
+  "form": {
+    "title": "Qaimə",
+    "description": "Qaimə yaradın",
+    "newInvBadge": "Yeni qaimə",
+    "wizard": {
+      "fromAndTo": "Kimdən və kimə",
+      "invoiceDetails": "Qaimə məlumatları",
+      "lineItems": "Mal və xidmətlər",
+      "paymentInfo": "Ödəniş məlumatları",
+      "summary": "Yekun",
+      "next": "İrəli",
+      "back": "Geri",
+      "stepLabel": "Addım",
+      "hasErrors": "xətalar var",
+      "progressLabel": "Qaimə formasının addımları",
+      "backTooltip": "Əvvəlki addıma qayıt",
+      "nextTooltip": "Növbəti addıma keç",
+      "stateComplete": "tamamlanıb",
+      "stateIncomplete": "yarımçıqdır",
+      "upNext": "Növbəti",
+      "sections": "Bölmələr"
+    },
+    "steps": {
+      "fromAndTo": {
+        "billFrom": "Satıcı",
+        "billTo": "Alıcı",
+        "name": "Ad",
+        "address": "Ünvan",
+        "zipCode": "Poçt kodu",
+        "city": "Şəhər",
+        "country": "Ölkə",
+        "email": "E-poçt",
+        "phone": "Telefon",
+        "addCustomInput": "Əlavə sahə əlavə et",
+        "sender": "Göndərən",
+        "receiver": "Alan"
+      },
+      "invoiceDetails": {
+        "heading": "Qaimə məlumatları",
+        "invoiceLogo": {
+          "label": "Qaimə loqosu",
+          "placeholder": "Şəkil yükləmək üçün klikləyin"
+        },
+        "invoiceNumber": "Qaimə nömrəsi",
+        "issuedDate": "Verilmə tarixi",
+        "dueDate": "Son ödəniş tarixi",
+        "currency": "Valyuta"
+      },
+      "lineItems": {
+        "heading": "Mal və xidmətlər",
+        "item": "Ad",
+        "name": "Ad",
+        "quantity": "Miqdar",
+        "rate": "Qiymət",
+        "total": "Cəmi",
+        "description": "Təsvir",
+        "addNewItem": "Yeni sətir əlavə et",
+        "removeItem": "Sətri sil"
+      },
+      "paymentInfo": {
+        "heading": "Ödəniş məlumatları",
+        "bankName": "Bankın adı",
+        "accountName": "Hesabın adı",
+        "accountNumber": "Hesab nömrəsi"
+      },
+      "summary": {
+        "heading": "Yekun",
+        "signature": {
+          "heading": "İmza",
+          "placeholder": "İmza əlavə etmək üçün klikləyin",
+          "description": "Qaiməyə imzanızı əlavə etmək üçün üsul seçin",
+          "draw": "Çək",
+          "type": "Yaz",
+          "upload": "Yüklə"
+        },
+        "additionalNotes": "Əlavə qeydlər",
+        "paymentTerms": "Ödəniş şərtləri",
+        "discount": "Endirim",
+        "tax": "Vergi",
+        "shipping": "Çatdırılma",
+        "subTotal": "Aralıq cəm",
+        "totalAmount": "Yekun məbləğ",
+        "includeTotalInWords": "Məbləğ sözlə yazılsın?",
+        "yes": "Bəli",
+        "no": "Xeyr",
+        "remove": "Sil",
+        "terms": {
+          "dueOnReceipt": "Dərhal ödənilir",
+          "net15": "15 gün",
+          "net30": "30 gün",
+          "net60": "60 gün"
+        }
+      }
+    },
+    "autosave": {
+      "saving": "Saxlanılır…",
+      "saved": "Saxlanıldı",
+      "justNow": "indicə"
+    }
+  },
+  "actions": {
+    "title": "Əməliyyatlar",
+    "description": "Əməliyyatlar və önizləmə",
+    "loadInvoice": "Qaimə aç",
+    "exportInvoice": "Qaiməni ixrac et",
+    "newInvoice": "Yeni qaimə",
+    "generatePdf": "PDF yarat",
+    "pdfView": "PDF görünüşü",
+    "preview": "Önizləmə",
+    "previewTitle": "Qaimənin önizləməsi",
+    "generatePdfLoading": "Yaradılır…",
+    "generatePdfTooltip": "Qaimənin PDF faylını yaradın",
+    "loadInvoiceTooltip": "Yadda saxlanılmış qaiməni açın",
+    "exportInvoiceTooltip": "Bu qaiməni fayl kimi ixrac edin",
+    "newInvoiceTooltip": "Yeni boş qaiməyə başlayın",
+    "resetForm": "Formanı sıfırla",
+    "resetFormTitle": "Forma sıfırlansın?",
+    "resetFormDescription": "Bütün sahələr və yadda saxlanılmış qaralama silinəcək.",
+    "resetFormConfirm": "Sıfırla",
+    "resetFormTooltip": "Bütün sahələri və qaralamanı silin",
+    "livePreview": "Canlı önizləmə",
+    "finalPdf": "Hazır PDF",
+    "backToLivePreview": "Canlı önizləməyə qayıt",
+    "previewInTab": "Önizləmə",
+    "download": "Endir",
+    "print": "Çap et",
+    "save": "Yadda saxla",
+    "sendToMail": "E-poçta göndər",
+    "openPdf": "PDF-i aç",
+    "pdfReady": "Qaimənizin PDF faylı hazırdır.",
+    "previewInTabTooltip": "Qaiməni yeni vərəqdə açın",
+    "downloadTooltip": "Qaimənin PDF faylını endirin",
+    "printTooltip": "Qaiməni çap edin",
+    "saveTooltip": "Qaiməni saytda yadda saxlayın",
+    "sendToMailTooltip": "Qaimənin PDF faylını e-poçta göndərin",
+    "importJson": "JSON idxal et",
+    "importJsonTooltip": "JSON formatında qaimə faylı idxal edin",
+    "moreActions": "Digər əməliyyatlar",
+    "fitToScreen": "Ekrana sığdır",
+    "actualSize": "Əsl ölçü"
+  },
+  "footer": {
+    "developedBy": "Hazırlayan",
+    "guide": "Necə işləyir"
+  },
+  "voiceInput": {
+    "voiceInput": "Səslə daxiletmə",
+    "tooltip": "Sətirləri tez əlavə etmək üçün səs tanımadan istifadə edin",
+    "title": "Sətirlər üçün səslə daxiletmə",
+    "description": "Mikrofon düyməsinə basıb danışmağa başlayın. Sistem məlumatı avtomatik tanıyıb emal edəcək.",
+    "notSupported": "Brauzeriniz səs tanımanı dəstəkləmir. Zəhmət olmasa Chrome brauzerindən istifadə edin.",
+    "error": "Səs tanıma xətası",
+    "microphoneDenied": "Mikrofona icazə verin və yenidən cəhd edin",
+    "noMicrophone": "Mikrofon aşkarlanmadı",
+    "networkError": "Şəbəkə xətası, bağlantınızı yoxlayın",
+    "initFailed": "Səs tanıma işə salına bilmədi",
+    "startFailed": "Səs tanımanı başlatmaq mümkün olmadı, yenidən cəhd edin",
+    "emptyText": "Əvvəlcə səs yazın",
+    "noItemsParsed": "Heç bir sətir tanınmadı. Yenidən cəhd edin.",
+    "browserHint": "Brauzer səs tanımanı dəstəkləmir",
+    "useChrome": "Səs tanıma üçün Chrome brauzerindən istifadə edin və ya aşağıda mətni əl ilə yazın.",
+    "manualInput": "Mətni əl ilə daxil et",
+    "manualPlaceholder": "Məsələn: Alma 3 ədəd qiyməti 5 manat, Noutbuk 2 ədəd qiyməti 8000",
+    "listening": "Dinlənilir…",
+    "transcript": "Mətn",
+    "clear": "Təmizlə",
+    "continueRecording": "Yazmağa davam et",
+    "parse": "Sətirləri emal et",
+    "parsedItems": "Nəticələr",
+    "item": "Sətir",
+    "cancel": "Ləğv et",
+    "confirm": "Əlavə et"
+  },
+  "navbar": {
+    "settings": "Tənzimləmələr",
+    "openSettings": "Tənzimləmələri aç",
+    "language": "Dil"
+  },
+  "invoiceDocument": {
+    "invoiceNumber": "Qaimə No.",
+    "from": "Kimdən",
+    "billTo": "Kimə",
+    "invoiceDate": "Qaimə tarixi",
+    "dueDate": "Son ödəniş tarixi",
+    "item": "Ad",
+    "qty": "Miqdar",
+    "rate": "Qiymət",
+    "amount": "Məbləğ",
+    "subtotal": "Aralıq cəm",
+    "discount": "Endirim",
+    "tax": "Vergi",
+    "shipping": "Çatdırılma",
+    "total": "Yekun",
+    "totalInWords": "Məbləğ sözlə",
+    "additionalNotes": "Əlavə qeydlər",
+    "paymentTerms": "Ödəniş şərtləri",
+    "signature": "İmza",
+    "paymentInfoHeading": "Ödənişi bu rekvizitlərə göndərin",
+    "bankName": "Bank",
+    "accountName": "Hesabın adı",
+    "accountNumber": "Hesab No.",
+    "contactHeading": "Bu qaimə ilə bağlı sualınız varsa, aşağıdakı əlaqə məlumatlarından istifadə edin:",
+    "logoAlt": "{name} loqosu",
+    "signatureAlt": "{name} imzası"
+  },
+  "gallery": {
+    "title": "Şablon seçin",
+    "description": "Bir tərtibat seçin, sonra vurğu rəngini, şrifti və sıxlığı təyin edin. Dəyişikliklər dərhal görünür.",
+    "templateLabel": "Şablon",
+    "changeTemplate": "Şablonu dəyiş",
+    "accent": "Vurğu rəngi",
+    "font": "Şrift",
+    "density": "Sıxlıq",
+    "comfortable": "Geniş",
+    "compact": "Sıx",
+    "spacious": "Geniş",
+    "customColor": "Fərdi rəng",
+    "reset": "Sıfırla",
+    "appearanceControls": "Görünüş",
+    "changeAppearance": "Qaimənin görünüşünü dəyişin"
+  },
+  "meta": {
+    "title": "Pulsuz Qaimə Yaradıcısı | Invoify",
+    "description": "Bir neçə dəqiqəyə peşəkar qaimə hazırlayın. On üç şablon, öz rəngləriniz və loqonuz, endirə və ya e-poçtla göndərə biləcəyiniz PDF. Pulsuzdur, qeydiyyat tələb olunmur.",
+    "ogTitle": "Pulsuz qaimə yaradıcısı",
+    "ogDescription": "On üç şablon. Doldurun, PDF-i endirin. Qeydiyyat yoxdur."
+  },
+  "landing": {
+    "h1": "Pulsuz qaimə yaradıcısı",
+    "intro": "Invoify brauzerinizdə peşəkar qaimə hazırlayır və sizə PDF verir. On üç şablondan birini seçin, vurğu rəngini və şrifti təyin edin, loqonuzu və imzanızı əlavə edin, nəticəni endirin və ya e-poçtla göndərin. Heç nə hesaba yüklənmir, çünki hesab anlayışı yoxdur.",
+    "guideH1": "Invoify necə işləyir",
+    "guideIntro": "Qaimə yaradıcısının nə etdiyini və ondan necə istifadə olunduğunu addım-addım izah edir: on üç şablon, onlarda dəyişə biləcəyiniz şeylər və boş formadan hazır PDF-ə qədər üç addım.",
+    "featuresHeading": "Nə əldə edirsiniz",
+    "features": {
+      "1": {
+        "title": "On üç şablon",
+        "body": "Bir tərtibatın on üç rəngi deyil, həqiqətən fərqli tərtibatlar — tam enli başlıqlar, vurğu zolaqları, mərkəzləşdirilmiş başlıqlar, cədvəlli formalar və yığcam qəbz üslubu. Hər biri tam A4 səhifədir və qaimə uzananda düzgün bölünür."
+      },
+      "2": {
+        "title": "Özünüzə uyğunlaşdırın",
+        "body": "Hazır rənglərdən və ya istənilən hex koddan vurğu rəngi seçin, dörd şrift arasından birini götürün, sıxlığı tənzimləyin — iyirmi sətir bir səhifəyə sığsın və ya üç sətir rahat yerləşsin. Loqo və çəkilmiş, yazılmış ya da yüklənmiş imza əlavə edin."
+      },
+      "3": {
+        "title": "Əsl PDF",
+        "body": "Brauzerinizin istifadə etdiyi mühərriklə, şriftlər fayla hopdurulmuş şəkildə hazırlanır — beləliklə fayl onu açan hər kompüterdə eyni görünür. Endirin, çap edin və ya birbaşa müştərinizə e-poçtla göndərin."
+      }
+    },
+    "howHeading": "Necə işləyir",
+    "how": {
+      "1": {
+        "title": "Məlumatları doldurun",
+        "body": "Kimin kimə qaimə verdiyi, tarixlər, mal və xidmətlər, ödəniş rekvizitləri. Yazdığınız hər şey dərhal yanındakı önizləmədə görünür və işiniz brauzerinizdə qaralama kimi saxlanılır."
+      },
+      "2": {
+        "title": "Görünüşü seçin",
+        "body": "Şablon qalereyasını açın, on üç tərtibatı öz məlumatlarınızla yan-yana müqayisə edin, sonra rəngi, şrifti və sıxlığı təyin edin."
+      },
+      "3": {
+        "title": "PDF yaradın",
+        "body": "Bir kliklə sənəd hazırlanır. Endirin, çap edin, sonra açmaq üçün yadda saxlayın və ya səhifədən çıxmadan müştərinizə göndərin."
+      }
+    },
+    "faqHeading": "Suallar",
+    "faq": {
+      "1": {
+        "q": "Invoify həqiqətən pulsuzdur?",
+        "a": "Bəli. Ödənişli paket, sınaq müddəti və ya yaradılmalı hesab yoxdur. Qaimə yaradıcısı, on üç şablonun hamısı və PDF ixracı pulsuzdur."
+      },
+      "2": {
+        "q": "Qeydiyyatdan keçmək lazımdırmı?",
+        "a": "Xeyr. Qaiməniz üzərində işlədiyiniz müddətdə öz brauzerinizdə saxlanılır, yadda saxlanılmış qaimələr də brauzerin yaddaşında qalır. Serverdə heç nə saxlanılmır."
+      },
+      "3": {
+        "q": "Şirkət loqomu əlavə edə bilərəmmi?",
+        "a": "Bəli. Qaimə məlumatları addımında şəkil yükləyin — o, on üç şablondan on ikisində görünəcək. Minimal şablonu qəsdən loqosuzdur."
+      },
+      "4": {
+        "q": "Hansı valyuta və dillər dəstəklənir?",
+        "a": "Yüz yetmişdən çox valyuta, istifadə etdiyiniz dilə uyğun formatlanır; interfeys on səkkiz dilə tərcümə olunub. Qaimə sənədinin özü isə onlardan on üçünə."
+      },
+      "5": {
+        "q": "PDF yaratdıqdan sonra qaiməni redaktə edə bilərəmmi?",
+        "a": "Bəli. İstənilən sahəni dəyişin — önizləmə dərhal canlı redaktəyə qayıdır, hazır olanda yenidən yaradın."
+      }
+    }
+  },
+  "clients": {
+    "emptyTooltip": "Burada istifadə etmək üçün əvvəlcə müştəri saxlayın",
+    "heading": "Yadda saxlanılmış müştərilər",
+    "pick": "Müştərilər",
+    "pickTooltip": "Bu sahələri saxlanılmış müştəri ilə doldurun",
+    "remove": "Sil",
+    "save": "Müştərini saxla",
+    "saveTooltip": "Növbəti qaimədə istifadə etmək üçün bu müştərini saxlayın",
+    "saved": "Saxlanılıb"
+  },
+  "senders": {
+    "emptyTooltip": "Burada istifadə etmək üçün əvvəlcə məlumatlarınızı yadda saxlayın",
+    "heading": "Saxlanılmış göndərənlər",
+    "pick": "Göndərənlər",
+    "pickTooltip": "Bu sahələri saxlanılmış göndərəndən doldurun",
+    "remove": "Sil",
+    "save": "Göndərəni saxla",
+    "saveTooltip": "Növbəti qaimədə istifadə etmək üçün bu məlumatları saxlayın",
+    "saved": "Saxlanıldı"
+  }
+}

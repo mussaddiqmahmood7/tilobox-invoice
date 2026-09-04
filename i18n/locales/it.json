@@ -1,0 +1,142 @@
+{
+  "form": {
+    "title": "Fattura",
+    "description": "Genera Fattura",
+    "newInvBadge": "Nuova Fattura",
+    "wizard": {
+      "fromAndTo": "Da & A",
+      "invoiceDetails": "Dettagli Fattura",
+      "lineItems": "Elementi Linea",
+      "paymentInfo": "Informazioni Pagamento",
+      "summary": "Riassunto",
+      "next": "Avanti",
+      "back": "Indietro",
+      "upNext": "Prossimo",
+      "sections": "Sezioni"
+    },
+    "steps": {
+      "fromAndTo": {
+        "billFrom": "Fattura Da",
+        "billTo": "Fattura A",
+        "name": "Nome",
+        "address": "Indirizzo",
+        "zipCode": "CAP",
+        "city": "Città",
+        "country": "Paese",
+        "email": "Email",
+        "phone": "Telefono",
+        "addCustomInput": "Aggiungi Campo Custom",
+        "sender": "Mittente",
+        "receiver": "Destinatario"
+      },
+      "invoiceDetails": {
+        "heading": "Dettagli Fattura",
+        "invoiceLogo": {
+          "label": "Logo Fattura",
+          "placeholder": "Fare clic per caricare un'immagine"
+        },
+        "invoiceNumber": "Numero Fattura",
+        "issuedDate": "Data di emissione",
+        "dueDate": "Data di scadenza",
+        "currency": "Valuta"
+      },
+      "lineItems": {
+        "heading": "Elementi",
+        "item": "Elemento",
+        "name": "Nome",
+        "quantity": "Quantità",
+        "rate": "Tasso",
+        "total": "Totale",
+        "description": "Descrizione",
+        "addNewItem": "Aggiungi nuovo elemento",
+        "removeItem": "Rimuovi Elemento"
+      },
+      "paymentInfo": {
+        "heading": "Informazioni sul pagamento",
+        "bankName": "Nome della banca",
+        "accountName": "Intestatario del conto",
+        "accountNumber": "Numero Conto"
+      },
+      "summary": {
+        "heading": "Sintesi",
+        "signature": {
+          "heading": "Firma",
+          "placeholder": "Fare clic per aggiungere la firma",
+          "description": "Scegli un metodo per aggiungere la tua firma alla fattura",
+          "draw": "Disegno",
+          "type": "Digita",
+          "upload": "Carica"
+        },
+        "additionalNotes": "Note aggiuntive",
+        "paymentTerms": "Termini di pagamento",
+        "discount": "Sconto",
+        "tax": "Imposte (IVA)",
+        "shipping": "Spedizione",
+        "subTotal": "Imponibile",
+        "totalAmount": "Importo totale",
+        "includeTotalInWords": "Includere il totale in parole?",
+        "yes": "Si",
+        "no": "No",
+        "terms": {
+          "dueOnReceipt": "Pagamento alla ricezione",
+          "net15": "15 giorni",
+          "net30": "30 giorni",
+          "net60": "60 giorni"
+        }
+      }
+    },
+    "autosave": {
+      "saving": "Salvataggio…",
+      "saved": "Salvato",
+      "justNow": "adesso"
+    }
+  },
+  "actions": {
+    "title": "Azioni",
+    "description": "Operazioni e anteprima",
+    "loadInvoice": "Caricare la fattura",
+    "exportInvoice": "Esportazione della fattura",
+    "newInvoice": "Nuova fattura",
+    "generatePdf": "Generare PDF",
+    "pdfView": "Vista in PDF",
+    "fitToScreen": "Adatta allo schermo",
+    "actualSize": "Dimensione reale"
+  },
+  "footer": {
+    "developedBy": "Sviluppato da",
+    "guide": "Come funziona"
+  },
+  "invoiceDocument": {
+    "invoiceNumber": "Fattura n.",
+    "from": "Da",
+    "billTo": "Fatturare a",
+    "invoiceDate": "Data fattura",
+    "dueDate": "Scadenza",
+    "item": "Descrizione",
+    "qty": "Qtà",
+    "rate": "Prezzo",
+    "amount": "Importo",
+    "subtotal": "Subtotale",
+    "discount": "Sconto",
+    "tax": "IVA",
+    "shipping": "Spedizione",
+    "total": "Totale",
+    "totalInWords": "Totale in lettere",
+    "additionalNotes": "Note aggiuntive",
+    "paymentTerms": "Termini di pagamento",
+    "signature": "Firma",
+    "paymentInfoHeading": "Si prega di effettuare il pagamento sulle seguenti coordinate",
+    "bankName": "Banca",
+    "accountName": "Intestatario del conto",
+    "accountNumber": "N. conto",
+    "contactHeading": "Per qualsiasi domanda su questa fattura, utilizzare i seguenti recapiti:",
+    "logoAlt": "Logo di {name}",
+    "signatureAlt": "Firma di {name}"
+  },
+  "meta": {
+    "title": "Generatore di fatture gratuito | Invoify",
+    "description": "Crea una fattura professionale in pochi minuti. Tredici modelli, i tuoi colori e il tuo logo, e un PDF da scaricare o inviare per email. Gratis, senza registrazione.",
+    "ogTitle": "Generatore di fatture gratuito",
+    "ogDescription": "Tredici modelli. Compila e scarica il PDF. Nessun account."
+  }
+}

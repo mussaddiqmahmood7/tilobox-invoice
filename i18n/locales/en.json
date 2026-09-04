@@ -1,0 +1,308 @@
+{
+  "form": {
+    "title": "Invoice",
+    "description": "Generate Invoice",
+    "newInvBadge": "New Invoice",
+    "wizard": {
+      "fromAndTo": "From & To",
+      "invoiceDetails": "Invoice Details",
+      "lineItems": "Line Items",
+      "paymentInfo": "Payment Info",
+      "summary": "Summary",
+      "next": "Next",
+      "back": "Back",
+      "stepLabel": "Step",
+      "hasErrors": "has errors",
+      "progressLabel": "Invoice form steps",
+      "backTooltip": "Go back to the previous step",
+      "nextTooltip": "Go to the next step",
+      "stateComplete": "complete",
+      "stateIncomplete": "incomplete",
+      "upNext": "Up next",
+      "sections": "Sections"
+    },
+    "steps": {
+      "fromAndTo": {
+        "billFrom": "Bill From",
+        "billTo": "Bill To",
+        "name": "Name",
+        "address": "Address",
+        "zipCode": "Zip",
+        "city": "City",
+        "country": "Country",
+        "email": "Email",
+        "phone": "Phone",
+        "addCustomInput": "Add Custom Input",
+        "sender": "Sender",
+        "receiver": "Receiver"
+      },
+      "invoiceDetails": {
+        "heading": "Invoice Details",
+        "invoiceLogo": {
+          "label": "Invoice Logo",
+          "placeholder": "Click to upload image"
+        },
+        "invoiceNumber": "Invoice Number",
+        "issuedDate": "Issue Date",
+        "dueDate": "Due Date",
+        "currency": "Currency"
+      },
+      "lineItems": {
+        "heading": "Items",
+        "item": "Item",
+        "name": "Name",
+        "quantity": "Quantity",
+        "rate": "Rate",
+        "total": "Total",
+        "description": "Description",
+        "addNewItem": "Add a new item",
+        "removeItem": "Remove item"
+      },
+      "paymentInfo": {
+        "heading": "Payment Information",
+        "bankName": "Bank Name",
+        "accountName": "Account Name",
+        "accountNumber": "Account Number"
+      },
+      "summary": {
+        "heading": "Summary",
+        "signature": {
+          "heading": "Signature",
+          "placeholder": "Click to add signature",
+          "description": "Choose a method to add your signature to the invoice",
+          "draw": "Draw",
+          "type": "Type",
+          "upload": "Upload"
+        },
+        "additionalNotes": "Additional Notes",
+        "paymentTerms": "Payment Terms",
+        "discount": "Discount",
+        "tax": "Tax",
+        "shipping": "Shipping",
+        "subTotal": "Subtotal",
+        "totalAmount": "Total Amount",
+        "includeTotalInWords": "Include Total in Words?",
+        "yes": "Yes",
+        "no": "No",
+        "remove": "Remove",
+        "terms": {
+          "dueOnReceipt": "Due on receipt",
+          "net15": "Net 15",
+          "net30": "Net 30",
+          "net60": "Net 60"
+        }
+      }
+    },
+    "autosave": {
+      "saving": "Saving…",
+      "saved": "Saved",
+      "justNow": "just now"
+    }
+  },
+  "actions": {
+    "title": "Actions",
+    "description": "Operations and preview",
+    "loadInvoice": "Load Invoice",
+    "exportInvoice": "Export Invoice",
+    "newInvoice": "New Invoice",
+    "generatePdf": "Generate PDF",
+    "pdfView": "PDF View",
+    "preview": "Preview",
+    "previewTitle": "Invoice preview",
+    "generatePdfLoading": "Generating…",
+    "generatePdfTooltip": "Generate your invoice PDF",
+    "loadInvoiceTooltip": "Open a saved invoice",
+    "exportInvoiceTooltip": "Export this invoice as a file",
+    "newInvoiceTooltip": "Start a new blank invoice",
+    "resetForm": "Reset Form",
+    "resetFormTitle": "Reset form?",
+    "resetFormDescription": "This will clear all fields and the saved draft.",
+    "resetFormConfirm": "Reset",
+    "resetFormTooltip": "Clear every field and the saved draft",
+    "livePreview": "Live Preview",
+    "finalPdf": "Final PDF",
+    "backToLivePreview": "Back to Live Preview",
+    "previewInTab": "Preview",
+    "download": "Download",
+    "print": "Print",
+    "save": "Save",
+    "sendToMail": "Send to mail",
+    "openPdf": "Open PDF",
+    "pdfReady": "Your invoice PDF is ready.",
+    "previewInTabTooltip": "Preview invoice in a new tab",
+    "downloadTooltip": "Download invoice PDF",
+    "printTooltip": "Print invoice",
+    "saveTooltip": "Save invoice in website",
+    "sendToMailTooltip": "Send invoice PDF to mail",
+    "importJson": "Import JSON",
+    "importJsonTooltip": "Import a JSON invoice file",
+    "moreActions": "More actions",
+    "fitToScreen": "Fit to screen",
+    "actualSize": "Actual size"
+  },
+  "footer": {
+    "developedBy": "Developed by",
+    "guide": "How it works"
+  },
+  "voiceInput": {
+    "voiceInput": "Voice Input",
+    "tooltip": "Use voice recognition to quickly add line items",
+    "title": "Voice Input for Line Items",
+    "description": "Click the microphone button and start speaking. The system will automatically recognize and parse the item information.",
+    "notSupported": "Your browser does not support speech recognition. Please use Chrome browser.",
+    "error": "Speech recognition error",
+    "microphoneDenied": "Please allow microphone permission and try again",
+    "noMicrophone": "No microphone device detected",
+    "networkError": "Network connection error, please check your network",
+    "initFailed": "Speech recognition initialization failed",
+    "startFailed": "Failed to start speech recognition, please try again",
+    "emptyText": "Please record some voice content first",
+    "noItemsParsed": "No item information was recognized. Please try again.",
+    "browserHint": "Browser does not support speech recognition",
+    "useChrome": "Please use Chrome browser for speech recognition, or manually enter text below to parse.",
+    "manualInput": "Manual Text Input",
+    "manualPlaceholder": "Example: Apple 3 quantity price 5 dollars, Laptop 2 quantity price 8000",
+    "listening": "Listening...",
+    "transcript": "Transcript",
+    "clear": "Clear",
+    "continueRecording": "Continue Recording",
+    "parse": "Parse Items",
+    "parsedItems": "Parsed Results",
+    "item": "Item",
+    "cancel": "Cancel",
+    "confirm": "Confirm Add"
+  },
+  "navbar": {
+    "settings": "Settings",
+    "openSettings": "Open settings",
+    "language": "Language"
+  },
+  "invoiceDocument": {
+    "invoiceNumber": "Invoice #",
+    "from": "From",
+    "billTo": "Bill to",
+    "invoiceDate": "Invoice date",
+    "dueDate": "Due date",
+    "item": "Item",
+    "qty": "Qty",
+    "rate": "Rate",
+    "amount": "Amount",
+    "subtotal": "Subtotal",
+    "discount": "Discount",
+    "tax": "Tax",
+    "shipping": "Shipping",
+    "total": "Total",
+    "totalInWords": "Total in words",
+    "additionalNotes": "Additional notes",
+    "paymentTerms": "Payment terms",
+    "signature": "Signature",
+    "paymentInfoHeading": "Please send the payment to this address",
+    "bankName": "Bank",
+    "accountName": "Account name",
+    "accountNumber": "Account no",
+    "contactHeading": "If you have any questions concerning this invoice, use the following contact information:",
+    "logoAlt": "Logo of {name}",
+    "signatureAlt": "Signature of {name}"
+  },
+  "gallery": {
+    "title": "Choose a template",
+    "description": "Pick a layout, then set the accent colour, typeface and density. Changes preview live.",
+    "templateLabel": "Template",
+    "changeTemplate": "Change template",
+    "accent": "Accent",
+    "font": "Font",
+    "density": "Density",
+    "comfortable": "Comfortable",
+    "compact": "Compact",
+    "spacious": "Spacious",
+    "customColor": "Custom colour",
+    "reset": "Reset",
+    "appearanceControls": "Appearance",
+    "changeAppearance": "Change the invoice's appearance"
+  },
+  "meta": {
+    "title": "Free Invoice Generator | Invoify",
+    "description": "Create a professional invoice in minutes. Thirteen templates, your own colours and logo, and a PDF you can download or email. Free, no account needed.",
+    "ogTitle": "Free invoice generator",
+    "ogDescription": "Thirteen templates. Fill it in, download the PDF. No account."
+  },
+  "landing": {
+    "h1": "Free invoice generator",
+    "intro": "Invoify builds a professional invoice in your browser and hands you a PDF. Choose one of thirteen templates, set your accent colour and typeface, add your logo and signature, and download or email the result. Nothing is uploaded to an account, because there are no accounts.",
+    "guideH1": "How Invoify works",
+    "guideIntro": "A walk through what the invoice generator does and how to use it: the thirteen templates, the things you can change about them, and the three steps from an empty form to a finished PDF.",
+    "featuresHeading": "What you get",
+    "features": {
+      "1": {
+        "title": "Thirteen templates",
+        "body": "Genuinely different layouts, not one layout in thirteen colours — full-bleed headers, accent rails, centred mastheads, ruled forms and a compact receipt style. Every one is a proper A4 page and paginates correctly when the invoice runs long."
+      },
+      "2": {
+        "title": "Make it yours",
+        "body": "Pick an accent colour from the presets or any hex you like, choose between four typefaces, and set the density to fit twenty line items on one page or let three of them breathe. Add a logo and a drawn, typed or uploaded signature."
+      },
+      "3": {
+        "title": "A real PDF",
+        "body": "Rendered with the same engine your browser uses, with the fonts embedded, so the file looks the same on every machine that opens it. Download it, print it, or send it straight to your client by email."
+      }
+    },
+    "howHeading": "How it works",
+    "how": {
+      "1": {
+        "title": "Fill in the details",
+        "body": "Who is invoicing whom, the dates, the line items, and your payment details. Everything you type appears in the preview beside the form as you go, and your work is saved in your browser as a draft."
+      },
+      "2": {
+        "title": "Choose how it looks",
+        "body": "Open the template gallery to compare all thirteen layouts side by side with your own data in them, then set the colour, typeface and density."
+      },
+      "3": {
+        "title": "Generate the PDF",
+        "body": "One click produces the document. Download it, print it, save it to reopen later, or email it to your client without leaving the page."
+      }
+    },
+    "faqHeading": "Questions",
+    "faq": {
+      "1": {
+        "q": "Is Invoify really free?",
+        "a": "Yes. There is no paid tier, no trial, and no account to create. The invoice generator, all thirteen templates and the PDF export are free to use."
+      },
+      "2": {
+        "q": "Do I need to sign up?",
+        "a": "No. Your invoice is held in your own browser while you work on it, and saved invoices stay in your browser's local storage. Nothing is stored on a server."
+      },
+      "3": {
+        "q": "Can I add my company logo?",
+        "a": "Yes. Upload an image on the invoice details step and it appears on twelve of the thirteen templates. The Minimal template is deliberately logo-free."
+      },
+      "4": {
+        "q": "What currencies and languages are supported?",
+        "a": "Over a hundred and seventy currencies, formatted for the language you are using, and the interface is translated into eighteen languages. The invoice document itself is translated into thirteen of them."
+      },
+      "5": {
+        "q": "Can I edit an invoice after generating the PDF?",
+        "a": "Yes. Change any field and the preview returns to live editing straight away, then generate again when you are ready."
+      }
+    }
+  },
+  "clients": {
+    "emptyTooltip": "Save a client first to reuse it here",
+    "heading": "Saved clients",
+    "pick": "Clients",
+    "pickTooltip": "Fill these fields from a saved client",
+    "remove": "Remove",
+    "save": "Save client",
+    "saveTooltip": "Save this client to reuse on your next invoice",
+    "saved": "Saved"
+  },
+  "senders": {
+    "emptyTooltip": "Save your details first to reuse them here",
+    "heading": "Saved senders",
+    "pick": "Senders",
+    "pickTooltip": "Fill these fields from a saved sender",
+    "remove": "Remove",
+    "save": "Save sender",
+    "saveTooltip": "Save these details to reuse on your next invoice",
+    "saved": "Saved"
+  }
+}

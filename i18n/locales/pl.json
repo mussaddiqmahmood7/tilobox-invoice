@@ -1,0 +1,142 @@
+{
+  "form": {
+    "title": "Faktura",
+    "description": "Generowanie faktury",
+    "newInvBadge": "Nowa faktura",
+    "wizard": {
+      "fromAndTo": "Od & Do",
+      "invoiceDetails": "Szczegóły faktury",
+      "lineItems": "Pozycje faktury",
+      "paymentInfo": "Informacje o płatności",
+      "summary": "Podsumowanie",
+      "next": "Dalej",
+      "back": "Wstecz",
+      "upNext": "Dalej",
+      "sections": "Sekcje"
+    },
+    "steps": {
+      "fromAndTo": {
+        "billFrom": "Wystawca",
+        "billTo": "Odbiorca",
+        "name": "Nazwa",
+        "address": "Adres",
+        "zipCode": "Kod pocztowy",
+        "city": "Miasto",
+        "country": "Kraj",
+        "email": "E-mail",
+        "phone": "Telefon",
+        "addCustomInput": "Dodaj niestandardowe pole",
+        "sender": "Nadawca",
+        "receiver": "Odbiorca"
+      },
+      "invoiceDetails": {
+        "heading": "Szczegóły faktury",
+        "invoiceLogo": {
+          "label": "Logo faktury",
+          "placeholder": "Kliknij, aby przesłać obraz"
+        },
+        "invoiceNumber": "Numer faktury",
+        "issuedDate": "Data wystawienia",
+        "dueDate": "Termin płatności",
+        "currency": "Waluta"
+      },
+      "lineItems": {
+        "heading": "Pozycje",
+        "item": "Pozycja",
+        "name": "Nazwa",
+        "quantity": "Ilość",
+        "rate": "Cena jednostkowa",
+        "total": "Suma",
+        "description": "Opis",
+        "addNewItem": "Dodaj nową pozycję",
+        "removeItem": "Usuń pozycję"
+      },
+      "paymentInfo": {
+        "heading": "Informacje o płatności",
+        "bankName": "Nazwa banku",
+        "accountName": "Nazwa konta",
+        "accountNumber": "Numer konta"
+      },
+      "summary": {
+        "heading": "Podsumowanie",
+        "signature": {
+          "heading": "Podpis",
+          "placeholder": "Kliknij, aby dodać podpis",
+          "description": "Wybierz metodę dodania podpisu do faktury",
+          "draw": "Narysuj",
+          "type": "Wpisz",
+          "upload": "Prześlij"
+        },
+        "additionalNotes": "Dodatkowe uwagi",
+        "paymentTerms": "Warunki płatności",
+        "discount": "Rabat",
+        "tax": "Podatek",
+        "shipping": "Koszt dostawy",
+        "subTotal": "Suma częściowa",
+        "totalAmount": "Kwota całkowita",
+        "includeTotalInWords": "Uwzględnić kwotę słownie?",
+        "yes": "Tak",
+        "no": "Nie",
+        "terms": {
+          "dueOnReceipt": "Płatne przy odbiorze",
+          "net15": "15 dni",
+          "net30": "30 dni",
+          "net60": "60 dni"
+        }
+      }
+    },
+    "autosave": {
+      "saving": "Zapisywanie…",
+      "saved": "Zapisano",
+      "justNow": "przed chwilą"
+    }
+  },
+  "actions": {
+    "title": "Akcje",
+    "description": "Operacje i podgląd",
+    "loadInvoice": "Wczytaj fakturę",
+    "exportInvoice": "Eksportuj fakturę",
+    "newInvoice": "Nowa faktura",
+    "generatePdf": "Generuj PDF",
+    "pdfView": "Podgląd PDF",
+    "fitToScreen": "Dopasuj do ekranu",
+    "actualSize": "Rozmiar rzeczywisty"
+  },
+  "footer": {
+    "developedBy": "Opracowane przez",
+    "guide": "Jak to działa"
+  },
+  "invoiceDocument": {
+    "invoiceNumber": "Faktura nr",
+    "from": "Sprzedawca",
+    "billTo": "Nabywca",
+    "invoiceDate": "Data wystawienia",
+    "dueDate": "Termin płatności",
+    "item": "Nazwa",
+    "qty": "Ilość",
+    "rate": "Cena jedn.",
+    "amount": "Wartość",
+    "subtotal": "Suma częściowa",
+    "discount": "Rabat",
+    "tax": "Podatek",
+    "shipping": "Dostawa",
+    "total": "Razem",
+    "totalInWords": "Słownie",
+    "additionalNotes": "Uwagi dodatkowe",
+    "paymentTerms": "Warunki płatności",
+    "signature": "Podpis",
+    "paymentInfoHeading": "Prosimy o dokonanie płatności na poniższy rachunek",
+    "bankName": "Bank",
+    "accountName": "Nazwa rachunku",
+    "accountNumber": "Nr rachunku",
+    "contactHeading": "W razie pytań dotyczących tej faktury prosimy o kontakt:",
+    "logoAlt": "Logo {name}",
+    "signatureAlt": "Podpis {name}"
+  },
+  "meta": {
+    "title": "Darmowy generator faktur | Invoify",
+    "description": "Stwórz profesjonalną fakturę w kilka minut. Trzynaście szablonów, własne kolory i logo oraz PDF do pobrania lub wysłania e-mailem. Za darmo, bez zakładania konta.",
+    "ogTitle": "Darmowy generator faktur",
+    "ogDescription": "Trzynaście szablonów. Wypełnij i pobierz PDF. Bez konta."
+  }
+}

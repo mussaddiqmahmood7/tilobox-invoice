@@ -1,0 +1,142 @@
+{
+  "form": {
+    "title": "Rechnung",
+    "description": "Rechnung erstellen",
+    "newInvBadge": "Neue Rechnung",
+    "wizard": {
+      "fromAndTo": "Von & An",
+      "invoiceDetails": "Rechnungsdetails",
+      "lineItems": "Positionen",
+      "paymentInfo": "Zahlung",
+      "summary": "Zusammenfassung",
+      "next": "Weiter",
+      "back": "Zurück",
+      "upNext": "Als Nächstes",
+      "sections": "Abschnitte"
+    },
+    "steps": {
+      "fromAndTo": {
+        "billFrom": "Absender",
+        "billTo": "Empfänger",
+        "name": "Name",
+        "address": "Adresse",
+        "zipCode": "PLZ",
+        "city": "Stadt",
+        "country": "Land",
+        "email": "E-Mail",
+        "phone": "Telefon",
+        "addCustomInput": "Benutzerfeld hinzufügen",
+        "sender": "Sender",
+        "receiver": "Empfänger"
+      },
+      "invoiceDetails": {
+        "heading": "Rechnungsdetails",
+        "invoiceLogo": {
+          "label": "Rechnungslogo",
+          "placeholder": "Bild hochladen"
+        },
+        "invoiceNumber": "Rechnungsnummer",
+        "issuedDate": "Ausstellungsdatum",
+        "dueDate": "Fälligkeitsdatum",
+        "currency": "Währung"
+      },
+      "lineItems": {
+        "heading": "Positionen",
+        "item": "Artikel",
+        "name": "Name",
+        "quantity": "Menge",
+        "rate": "Preis",
+        "total": "Gesamt",
+        "description": "Beschreibung",
+        "addNewItem": "Neue Position",
+        "removeItem": "Entfernen"
+      },
+      "paymentInfo": {
+        "heading": "Zahlungsinformationen",
+        "bankName": "Bank",
+        "accountName": "Kontoinhaber",
+        "accountNumber": "Kontonummer"
+      },
+      "summary": {
+        "heading": "Zusammenfassung",
+        "signature": {
+          "heading": "Unterschrift",
+          "placeholder": "Unterschrift hinzufügen",
+          "description": "Wählen Sie eine Methode, um Ihre Unterschrift zur Rechnung hinzuzufügen",
+          "draw": "Zeichnen",
+          "type": "Typ",
+          "upload": "Hochladen"
+        },
+        "additionalNotes": "Notizen",
+        "paymentTerms": "Zahlungsbedingungen",
+        "discount": "Rabatt",
+        "tax": "Steuer",
+        "shipping": "Versand",
+        "subTotal": "Zwischensumme",
+        "totalAmount": "Gesamtbetrag",
+        "includeTotalInWords": "In Worten",
+        "yes": "Ja",
+        "no": "Nein",
+        "terms": {
+          "dueOnReceipt": "Sofort fällig",
+          "net15": "Zahlbar in 15 Tagen",
+          "net30": "Zahlbar in 30 Tagen",
+          "net60": "Zahlbar in 60 Tagen"
+        }
+      }
+    },
+    "autosave": {
+      "saving": "Wird gespeichert…",
+      "saved": "Gespeichert",
+      "justNow": "gerade eben"
+    }
+  },
+  "actions": {
+    "title": "Aktionen",
+    "description": "Operationen und Vorschau",
+    "loadInvoice": "Rechnung laden",
+    "exportInvoice": "Rechnung exportieren",
+    "newInvoice": "Neue Rechnung",
+    "generatePdf": "PDF generieren",
+    "pdfView": "PDF-Ansicht",
+    "fitToScreen": "An Fenster anpassen",
+    "actualSize": "Originalgröße"
+  },
+  "footer": {
+    "developedBy": "Entwickelt von",
+    "guide": "So funktioniert es"
+  },
+  "invoiceDocument": {
+    "invoiceNumber": "Rechnung #",
+    "from": "Von",
+    "billTo": "Rechnung an",
+    "invoiceDate": "Rechnungsdatum",
+    "dueDate": "Fälligkeitsdatum",
+    "item": "Artikel",
+    "qty": "Menge",
+    "rate": "Preis",
+    "amount": "Betrag",
+    "subtotal": "Zwischensumme",
+    "discount": "Rabatt",
+    "tax": "Steuer",
+    "shipping": "Versand",
+    "total": "Gesamt",
+    "totalInWords": "Gesamtbetrag in Worten",
+    "additionalNotes": "Zusätzliche Hinweise",
+    "paymentTerms": "Zahlungsbedingungen",
+    "signature": "Unterschrift",
+    "paymentInfoHeading": "Bitte senden Sie die Zahlung an diese Adresse",
+    "bankName": "Bank",
+    "accountName": "Kontoinhaber",
+    "accountNumber": "Kontonummer",
+    "contactHeading": "Bei Fragen zu dieser Rechnung verwenden Sie bitte die folgenden Kontaktdaten:",
+    "logoAlt": "Logo von {name}",
+    "signatureAlt": "Unterschrift von {name}"
+  },
+  "meta": {
+    "title": "Kostenloser Rechnungsgenerator | Invoify",
+    "description": "Erstellen Sie in wenigen Minuten eine professionelle Rechnung. Dreizehn Vorlagen, eigene Farben und Logo, als PDF zum Herunterladen oder Versenden. Kostenlos, ohne Konto.",
+    "ogTitle": "Kostenloser Rechnungsgenerator",
+    "ogDescription": "Dreizehn Vorlagen. Ausfüllen, PDF herunterladen. Ohne Konto."
+  }
+}

@@ -1,0 +1,142 @@
+{
+  "form": {
+    "title": "Faktur",
+    "description": "Buat Faktur",
+    "newInvBadge": "Faktur Baru",
+    "wizard": {
+      "fromAndTo": "Dari & Ke",
+      "invoiceDetails": "Detail Faktur",
+      "lineItems": "Daftar Item",
+      "paymentInfo": "Info Pembayaran",
+      "summary": "Ringkasan",
+      "next": "Selanjutnya",
+      "back": "Kembali",
+      "upNext": "Berikutnya",
+      "sections": "Bagian"
+    },
+    "steps": {
+      "fromAndTo": {
+        "billFrom": "Tagihan Dari",
+        "billTo": "Tagihan Ke",
+        "name": "Nama",
+        "address": "Alamat",
+        "zipCode": "Kode Pos",
+        "city": "Kota",
+        "country": "Negara",
+        "email": "Email",
+        "phone": "Telepon",
+        "addCustomInput": "Tambah Input Kustom",
+        "sender": "Pengirim",
+        "receiver": "Penerima"
+      },
+      "invoiceDetails": {
+        "heading": "Detail Faktur",
+        "invoiceLogo": {
+          "label": "Logo Faktur",
+          "placeholder": "Klik untuk unggah gambar"
+        },
+        "invoiceNumber": "Nomor Faktur",
+        "issuedDate": "Tanggal Terbit",
+        "dueDate": "Jatuh Tempo",
+        "currency": "Mata Uang"
+      },
+      "lineItems": {
+        "heading": "Item",
+        "item": "Item",
+        "name": "Nama",
+        "quantity": "Jumlah",
+        "rate": "Harga",
+        "total": "Total",
+        "description": "Deskripsi",
+        "addNewItem": "Tambah item baru",
+        "removeItem": "Hapus item"
+      },
+      "paymentInfo": {
+        "heading": "Informasi Pembayaran",
+        "bankName": "Nama Bank",
+        "accountName": "Nama Rekening",
+        "accountNumber": "Nomor Rekening"
+      },
+      "summary": {
+        "heading": "Ringkasan",
+        "signature": {
+          "heading": "Tanda Tangan",
+          "placeholder": "Klik untuk menambah tanda tangan",
+          "description": "Pilih metode untuk menambahkan tanda tangan Anda ke faktur",
+          "draw": "Gambar",
+          "type": "Ketik",
+          "upload": "Unggah"
+        },
+        "additionalNotes": "Catatan Tambahan",
+        "paymentTerms": "Syarat Pembayaran",
+        "discount": "Diskon",
+        "tax": "Pajak",
+        "shipping": "Biaya Kirim",
+        "subTotal": "Subtotal",
+        "totalAmount": "Total Pembayaran",
+        "includeTotalInWords": "Sertakan Total dalam Kata-kata?",
+        "yes": "Ya",
+        "no": "Tidak",
+        "terms": {
+          "dueOnReceipt": "Dibayar saat diterima",
+          "net15": "15 hari",
+          "net30": "30 hari",
+          "net60": "60 hari"
+        }
+      }
+    },
+    "autosave": {
+      "saving": "Menyimpan…",
+      "saved": "Tersimpan",
+      "justNow": "baru saja"
+    }
+  },
+  "actions": {
+    "title": "Tindakan",
+    "description": "Operasi dan pratinjau",
+    "loadInvoice": "Muat Faktur",
+    "exportInvoice": "Ekspor Faktur",
+    "newInvoice": "Faktur Baru",
+    "generatePdf": "Buat PDF",
+    "pdfView": "Tampilan PDF",
+    "fitToScreen": "Sesuaikan layar",
+    "actualSize": "Ukuran asli"
+  },
+  "footer": {
+    "developedBy": "Dikembangkan oleh",
+    "guide": "Cara kerjanya"
+  },
+  "invoiceDocument": {
+    "invoiceNumber": "Faktur No.",
+    "from": "Dari",
+    "billTo": "Ditagihkan kepada",
+    "invoiceDate": "Tanggal faktur",
+    "dueDate": "Jatuh tempo",
+    "item": "Deskripsi",
+    "qty": "Jml",
+    "rate": "Harga",
+    "amount": "Jumlah",
+    "subtotal": "Subtotal",
+    "discount": "Diskon",
+    "tax": "Pajak",
+    "shipping": "Pengiriman",
+    "total": "Total",
+    "totalInWords": "Total dalam huruf",
+    "additionalNotes": "Catatan tambahan",
+    "paymentTerms": "Syarat pembayaran",
+    "signature": "Tanda tangan",
+    "paymentInfoHeading": "Silakan kirim pembayaran ke rekening berikut",
+    "bankName": "Bank",
+    "accountName": "Nama rekening",
+    "accountNumber": "No. rekening",
+    "contactHeading": "Jika ada pertanyaan mengenai faktur ini, gunakan informasi kontak berikut:",
+    "logoAlt": "Logo {name}",
+    "signatureAlt": "Tanda tangan {name}"
+  },
+  "meta": {
+    "title": "Pembuat Faktur Gratis | Invoify",
+    "description": "Buat faktur profesional dalam hitungan menit. Tiga belas templat, warna dan logo Anda sendiri, serta PDF yang bisa diunduh atau dikirim lewat email. Gratis, tanpa akun.",
+    "ogTitle": "Pembuat faktur gratis",
+    "ogDescription": "Tiga belas templat. Isi, unduh PDF-nya. Tanpa akun."
+  }
+}
