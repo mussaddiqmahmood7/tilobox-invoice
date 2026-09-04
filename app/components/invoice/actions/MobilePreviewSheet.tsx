@@ -17,6 +17,8 @@ import { PdfViewer } from "@/app/components";
 // Contexts
 import { useTranslationContext } from "@/contexts/TranslationContext";
 
+import FormatToggle from "./FormatToggle";
+
 type MobilePreviewSheetProps = {
     children: ReactNode;
 };
@@ -40,8 +42,9 @@ const MobilePreviewSheet = ({ children }: MobilePreviewSheetProps) => {
                 side="bottom"
                 className="flex h-[92dvh] flex-col rounded-t-xl p-0"
             >
-                <SheetHeader className="shrink-0 border-b px-4 py-3 text-start">
+                <SheetHeader className="shrink-0 border-b px-4 py-3 flex flex-row items-center justify-between">
                     <SheetTitle>{_t("actions.previewTitle")}</SheetTitle>
+                    <FormatToggle />
                 </SheetHeader>
 
                 <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-4 pb-6">

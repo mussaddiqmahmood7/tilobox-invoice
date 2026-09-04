@@ -10,6 +10,9 @@ import {
 } from "@/components/ui/popover";
 import { Skeleton } from "@/components/ui/skeleton";
 
+// RHF
+import { useFormContext, useWatch } from "react-hook-form";
+
 // Components
 import {
     PdfViewer,
@@ -19,6 +22,7 @@ import {
     InvoiceExportModal,
     TemplateGallery,
 } from "@/app/components";
+import FormatToggle from "./actions/FormatToggle";
 
 // Contexts
 import { useInvoiceContext } from "@/contexts/InvoiceContext";
@@ -121,6 +125,10 @@ const InvoiceActions = () => {
         </div>
     );
 
+    const { control } = useFormContext();
+    const format = useWatch({ control, name: "details.documentFormat" }) || "a4";
+    const isReceipt = format === "receipt";
+
     return (
         // The preview pane sits on the tinted ground, so the invoice reads as a
         // sheet of paper on a desk rather than as another panel.
@@ -133,20 +141,19 @@ const InvoiceActions = () => {
             <div className="xl:sticky xl:top-24 shell:static shell:flex shell:min-h-0 shell:flex-1 shell:flex-col">
                 {/*
                  * Toolbar above the preview — desktop only.
-                 *
-                 * Document controls on the left, actions on the right, as in
-                 * option B. The heading this used to carry said "Invoice
-                 * preview" above an invoice preview; the chips use that space
-                 * to say something the user can act on.
                  */}
                 <div className="mb-3 hidden items-center justify-between gap-3 xl:flex shell:px-5 shell:pt-5">
-                    {isDesktop ? (
-                        <TemplateGallery variant="chips" />
-                    ) : (
-                        <h2 className="text-sm font-medium text-muted-foreground">
-                            {_t("actions.previewTitle")}
-                        </h2>
-                    )}
+                    <div className="flex flex-wrap items-center gap-2">
+                        <FormatToggle />
+                        {isDesktop && !isReceipt && (
+                            <TemplateGallery variant="chips" />
+                        )}
+                        {!isDesktop && (
+                            <h2 className="text-sm font-medium text-muted-foreground">
+                                {_t("actions.previewTitle")}
+                            </h2>
+                        )}
+                    </div>
 
                     <div className="flex shrink-0 items-center gap-2">
                         {/* Fit / actual size — shell only, where the pane has a

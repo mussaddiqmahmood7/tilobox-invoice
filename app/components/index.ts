@@ -37,6 +37,7 @@ import InvoiceDetails from "./invoice/form/sections/InvoiceDetails";
 import Items from "./invoice/form/sections/Items";
 import PaymentInformation from "./invoice/form/sections/PaymentInformation";
 import InvoiceSummary from "./invoice/form/sections/InvoiceSummary";
+import ClientAddressBookModal from "./invoice/form/ClientAddressBookModal";
 import ImportJsonButton from "./invoice/form/sections/ImportJsonButton";
 
 // * Actions
@@ -44,6 +45,8 @@ import PdfViewer from "./invoice/actions/PdfViewer";
 import LivePreview from "./invoice/actions/LivePreview";
 import FinalPdf from "./invoice/actions/FinalPdf";
 import MobilePreviewSheet from "./invoice/actions/MobilePreviewSheet";
+import FormatToggle from "./invoice/actions/FormatToggle";
+import PaymentQrCode from "./reusables/PaymentQrCode";
 
 // * Reusable components
 // Form fields
@@ -122,6 +125,7 @@ export {
     SingleItem,
     Charges,
     PartyPicker,
+    ClientAddressBookModal,
     PaymentTermPresets,
     AutosaveIndicator,
     TemplateGallery,
@@ -137,6 +141,8 @@ export {
     LivePreview,
     FinalPdf,
     MobilePreviewSheet,
+    FormatToggle,
+    PaymentQrCode,
     FormInput,
     FormTextarea,
     DatePickerFormField,

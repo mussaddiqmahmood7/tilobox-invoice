@@ -62,8 +62,16 @@ export async function generatePdfService(req: NextRequest) {
 
     try {
         const ReactDOMServer = (await import("react-dom/server")).default;
-        const templateId = body.details.pdfTemplate;
-        const InvoiceTemplate = await getInvoiceTemplate(templateId);
+        const isReceipt = body.details.documentFormat === "receipt";
+        let InvoiceTemplate: any;
+        if (isReceipt) {
+            InvoiceTemplate = (
+                await import("@/app/components/templates/invoice-pdf/layouts/ReceiptTemplate")
+            ).default;
+        } else {
+            const templateId = body.details.pdfTemplate;
+            InvoiceTemplate = await getInvoiceTemplate(templateId);
+        }
 
         if (!InvoiceTemplate) {
             return NextResponse.json(
@@ -131,6 +139,14 @@ export async function generatePdfService(req: NextRequest) {
              * printed margin is now the template's decision rather than a
              * fixed frame imposed on all thirteen.
              */
+            if (isReceipt) {
+                return page.pdf({
+                    width: "80mm",
+                    printBackground: true,
+                    margin: { top: "2mm", right: "2mm", bottom: "2mm", left: "2mm" },
+                });
+            }
+
             return page.pdf({
                 format: "a4",
                 printBackground: true,
