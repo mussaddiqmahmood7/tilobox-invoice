@@ -6,9 +6,10 @@ import { BaseButton, MobilePreviewSheet } from "@/app/components";
 // Contexts
 import { useInvoiceContext } from "@/contexts/InvoiceContext";
 import { useTranslationContext } from "@/contexts/TranslationContext";
+import { usePwa } from "@/contexts/PwaContext";
 
 // Icons
-import { Eye, FileInput } from "lucide-react";
+import { Eye, FileInput, Printer } from "lucide-react";
 
 /**
  * Sticky bottom bar shown below xl, holding the two actions that matter on a
@@ -19,7 +20,7 @@ import { Eye, FileInput } from "lucide-react";
  */
 const MobileActionBar = () => {
     const { invoicePdfLoading } = useInvoiceContext();
-
+    const { isOnline } = usePwa();
     const { _t } = useTranslationContext();
 
     return (
@@ -40,16 +41,28 @@ const MobileActionBar = () => {
                     </BaseButton>
                 </MobilePreviewSheet>
 
-                <BaseButton
-                    type="submit"
-                    className="flex-1 whitespace-nowrap"
-                    size="lg"
-                    loading={invoicePdfLoading}
-                    loadingText={_t("actions.generatePdfLoading")}
-                >
-                    <FileInput className="h-5 w-5" />
-                    {_t("actions.generatePdf")}
-                </BaseButton>
+                {!isOnline ? (
+                    <BaseButton
+                        type="button"
+                        onClick={() => window.print()}
+                        className="flex-1 whitespace-nowrap bg-amber-600 hover:bg-amber-700 text-white"
+                        size="lg"
+                    >
+                        <Printer className="h-5 w-5" />
+                        <span>Print / Save (Offline)</span>
+                    </BaseButton>
+                ) : (
+                    <BaseButton
+                        type="submit"
+                        className="flex-1 whitespace-nowrap"
+                        size="lg"
+                        loading={invoicePdfLoading}
+                        loadingText={_t("actions.generatePdfLoading")}
+                    >
+                        <FileInput className="h-5 w-5" />
+                        {_t("actions.generatePdf")}
+                    </BaseButton>
+                )}
             </div>
         </div>
     );

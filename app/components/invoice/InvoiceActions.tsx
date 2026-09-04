@@ -27,6 +27,7 @@ import FormatToggle from "./actions/FormatToggle";
 // Contexts
 import { useInvoiceContext } from "@/contexts/InvoiceContext";
 import { useTranslationContext } from "@/contexts/TranslationContext";
+import { usePwa } from "@/contexts/PwaContext";
 
 // Hooks
 import { useIsDesktop } from "@/hooks/useMediaQuery";
@@ -40,12 +41,13 @@ import {
     Minimize2,
     MoreHorizontal,
     Plus,
+    Printer,
     RotateCcw,
 } from "lucide-react";
 
 const InvoiceActions = () => {
     const { invoicePdfLoading, newInvoice } = useInvoiceContext();
-
+    const { isOnline } = usePwa();
     const { _t } = useTranslationContext();
 
     /*
@@ -95,6 +97,16 @@ const InvoiceActions = () => {
                     {_t("actions.exportInvoice")}
                 </BaseButton>
             </InvoiceExportModal>
+
+            <BaseButton
+                variant="ghost"
+                className="w-full justify-start"
+                onClick={() => window.print()}
+                disabled={invoicePdfLoading}
+            >
+                <Printer className="h-4 w-4" />
+                {_t("actions.print") || "Print / Save PDF"}
+            </BaseButton>
 
             <NewInvoiceAlert>
                 <BaseButton
@@ -198,15 +210,27 @@ const InvoiceActions = () => {
                             </PopoverContent>
                         </Popover>
 
-                        <BaseButton
-                            type="submit"
-                            tooltipLabel={_t("actions.generatePdfTooltip")}
-                            loading={invoicePdfLoading}
-                            loadingText={_t("actions.generatePdfLoading")}
-                        >
-                            <FileInput className="h-4 w-4" />
-                            {_t("actions.generatePdf")}
-                        </BaseButton>
+                        {!isOnline ? (
+                            <BaseButton
+                                type="button"
+                                onClick={() => window.print()}
+                                tooltipLabel="Print or Save as PDF directly in your browser without internet"
+                                className="bg-amber-600 hover:bg-amber-700 text-white"
+                            >
+                                <Printer className="h-4 w-4" />
+                                <span>Print / Save (Offline)</span>
+                            </BaseButton>
+                        ) : (
+                            <BaseButton
+                                type="submit"
+                                tooltipLabel={_t("actions.generatePdfTooltip")}
+                                loading={invoicePdfLoading}
+                                loadingText={_t("actions.generatePdfLoading")}
+                            >
+                                <FileInput className="h-4 w-4" />
+                                {_t("actions.generatePdf")}
+                            </BaseButton>
+                        )}
                     </div>
                 </div>
 

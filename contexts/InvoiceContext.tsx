@@ -102,6 +102,7 @@ export const InvoiceContextProvider = ({
     pdfGenerationError,
     exportInvoiceError,
     importInvoiceError,
+    newToast,
   } = useToasts();
 
   // Get form values and methods from form context
@@ -307,6 +308,17 @@ export const InvoiceContextProvider = ({
    * @throws {Error} - If an error occurs during the PDF generation process.
    */
   const generatePdf = useCallback(async (data: InvoiceType) => {
+    // Offline fallback: Direct browser print / save to PDF
+    if (typeof navigator !== "undefined" && !navigator.onLine) {
+      newToast({
+        title: "Working Offline",
+        description: "Opening print dialog. You can print directly or choose 'Save as PDF'.",
+        variant: "default",
+      });
+      window.print();
+      return;
+    }
+
     // Cancel any in-flight generation so a re-submit doesn't race the previous
     // one and resolve out of order.
     generateAbortRef.current?.abort();
@@ -488,6 +500,15 @@ export const InvoiceContextProvider = ({
    * @returns {Promise<void>} A promise that resolves once the email is successfully sent.
    */
   const sendPdfToMail = (email: string) => {
+    if (typeof navigator !== "undefined" && !navigator.onLine) {
+      newToast({
+        title: "Offline",
+        description: "Cannot send email while offline. Connect to the internet to send.",
+        variant: "destructive",
+      });
+      return Promise.resolve();
+    }
+
     const fd = new FormData();
     fd.append("email", email);
     fd.append("invoicePdf", invoicePdf, "invoice.pdf");
@@ -523,6 +544,32 @@ export const InvoiceContextProvider = ({
    */
   const exportInvoiceAs = (exportAs: ExportTypes) => {
     const formValues = getValues();
+
+    // Client-side offline handling
+    if (typeof navigator !== "undefined" && !navigator.onLine) {
+      if (exportAs === ExportTypes.JSON) {
+        const jsonStr = JSON.stringify(formValues, null, 2);
+        const blob = new Blob([jsonStr], { type: "application/json" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = `invoice-${formValues.details.invoiceNumber || "draft"}.json`;
+        a.click();
+        URL.revokeObjectURL(url);
+        newToast({
+          title: "Invoice Exported",
+          description: "JSON file saved to your device.",
+          variant: "default",
+        });
+        return;
+      }
+      newToast({
+        title: "Offline Mode",
+        description: "JSON export and printing work offline. Connect to internet for XLSX/DOCX exports.",
+        variant: "default",
+      });
+      return;
+    }
 
     // Service to export invoice with given parameters
     exportInvoice(exportAs, formValues).catch((error) => {
