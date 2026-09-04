@@ -3,33 +3,34 @@
 @tailwind utilities;
 
 @layer base {
-    :root {
-        --background: 240 25% 98%;
-        /*
-         * The tinted ground the invoice paper floats on, in the preview pane.
-         * Deliberately its own token rather than --muted, which is already the
-         * resting fill of every input; the two need to move independently.
-         */
-        --ground: 240 20% 93.5%;
-        --foreground: 224 44% 12%;
+    /* ──────────────────────────────────────────────
+       Theme: Soft Slate (Default Light)
+       Clean neutral canvas with #0b5fa5 cobalt blue
+       ────────────────────────────────────────────── */
+    :root,
+    .light,
+    [data-theme="soft-slate"] {
+        --background: 210 40% 98%;   /* #f8fafc */
+        --ground: 210 40% 96%;       /* #f1f5f9 */
+        --foreground: 222 47% 11%;   /* #0f172a */
 
-        --card: 0 0% 100%;
-        --card-foreground: 224 44% 12%;
+        --card: 0 0% 100%;           /* #ffffff */
+        --card-foreground: 222 47% 11%;
 
         --popover: 0 0% 100%;
-        --popover-foreground: 224 44% 12%;
+        --popover-foreground: 222 47% 11%;
 
-        --primary: 248 78% 60%;
+        --primary: 207 88% 35%;      /* #0b5fa5 TiloBox Cobalt */
         --primary-foreground: 0 0% 100%;
 
-        --secondary: 240 20% 95%;
-        --secondary-foreground: 224 40% 20%;
+        --secondary: 210 40% 96%;
+        --secondary-foreground: 222 47% 11%;
 
-        --muted: 240 20% 95.5%;
-        --muted-foreground: 232 12% 46%;
+        --muted: 210 40% 96%;
+        --muted-foreground: 215 16% 47%; /* #64748b */
 
-        --accent: 248 70% 96%;
-        --accent-foreground: 248 60% 38%;
+        --accent: 205 84% 93%;       /* #dff0fc */
+        --accent-foreground: 207 88% 35%; /* #0b5fa5 */
 
         --destructive: 0 78% 56%;
         --destructive-foreground: 0 0% 100%;
@@ -40,36 +41,44 @@
         --warning: 38 92% 48%;
         --warning-foreground: 30 60% 12%;
 
-        --border: 240 16% 90%;
-        --input: 240 16% 88%;
-        --ring: 248 78% 60%;
+        --border: 214 32% 91%;       /* #e2e8f0 */
+        --input: 214 32% 91%;
+        --ring: 207 88% 35%;         /* #0b5fa5 */
 
         --radius: 0.75rem;
+
+        --brand-mark-background: #f1f5f9;
+        --brand-mark-border: #94a3b8;
+        --brand-mark-accent: #0b5fa5;
     }
 
-    .dark {
-        --background: 235 30% 9%;
-        /* Darker than the surface in dark mode, so the paper still lifts. */
-        --ground: 235 32% 7%;
-        --foreground: 240 20% 96%;
+    /* ──────────────────────────────────────────────
+       Theme: Cyberpunk Slate (Dark)
+       Deep #0b0f19 navy slate, vivid sky/cyan accents
+       ────────────────────────────────────────────── */
+    .dark,
+    [data-theme="cyberpunk-slate"] {
+        --background: 223 39% 7%;   /* #0b0f19 navy-slate */
+        --ground: 224 48% 5%;       /* #060911 */
+        --foreground: 210 40% 98%;  /* #f8fafc */
 
-        --card: 235 27% 12%;
-        --card-foreground: 240 20% 96%;
+        --card: 222 47% 11%;        /* #111827 */
+        --card-foreground: 210 40% 98%;
 
-        --popover: 235 27% 12%;
-        --popover-foreground: 240 20% 96%;
+        --popover: 222 47% 11%;
+        --popover-foreground: 210 40% 98%;
 
-        --primary: 250 85% 70%;
-        --primary-foreground: 235 45% 10%;
+        --primary: 199 89% 60%;     /* #38bdf8 vivid cyan/sky */
+        --primary-foreground: 223 39% 7%;
 
-        --secondary: 235 20% 18%;
-        --secondary-foreground: 240 20% 94%;
+        --secondary: 217 33% 17%;   /* #1e293b */
+        --secondary-foreground: 210 40% 98%;
 
-        --muted: 235 20% 17%;
-        --muted-foreground: 235 12% 65%;
+        --muted: 217 33% 17%;
+        --muted-foreground: 215 20% 65%; /* #94a3b8 */
 
-        --accent: 250 40% 22%;
-        --accent-foreground: 250 80% 85%;
+        --accent: 217 33% 17%;
+        --accent-foreground: 199 89% 60%;
 
         --destructive: 0 70% 58%;
         --destructive-foreground: 0 0% 100%;
@@ -80,9 +89,105 @@
         --warning: 38 90% 58%;
         --warning-foreground: 30 60% 10%;
 
-        --border: 235 18% 22%;
-        --input: 235 18% 24%;
-        --ring: 250 85% 70%;
+        --border: 217 33% 17%;      /* #1e293b */
+        --input: 217 33% 17%;
+        --ring: 199 89% 60%;
+
+        --brand-mark-background: #0b0f19;
+        --brand-mark-border: #1e293b;
+        --brand-mark-accent: #38bdf8;
+    }
+
+    /* ──────────────────────────────────────────────
+       Theme: Classic Obsidian
+       OLED black #000000, monochrome whites
+       ────────────────────────────────────────────── */
+    .classic-obsidian,
+    [data-theme="classic-obsidian"] {
+        --background: 0 0% 0%;       /* #000000 pure OLED */
+        --ground: 0 0% 3%;
+        --foreground: 0 0% 98%;      /* #fafafa */
+
+        --card: 0 0% 4%;            /* #0a0a0a */
+        --card-foreground: 0 0% 98%;
+
+        --popover: 0 0% 4%;
+        --popover-foreground: 0 0% 98%;
+
+        --primary: 0 0% 98%;        /* #fafafa */
+        --primary-foreground: 0 0% 4%;
+
+        --secondary: 0 0% 9%;       /* #171717 */
+        --secondary-foreground: 0 0% 98%;
+
+        --muted: 0 0% 9%;
+        --muted-foreground: 0 0% 64%; /* #a3a3a3 */
+
+        --accent: 0 0% 15%;         /* #262626 */
+        --accent-foreground: 0 0% 98%;
+
+        --destructive: 0 70% 58%;
+        --destructive-foreground: 0 0% 100%;
+
+        --success: 152 55% 46%;
+        --success-foreground: 0 0% 0%;
+
+        --warning: 38 90% 58%;
+        --warning-foreground: 30 60% 10%;
+
+        --border: 0 0% 15%;         /* #262626 */
+        --input: 0 0% 15%;
+        --ring: 0 0% 83%;           /* #d4d4d4 */
+
+        --brand-mark-background: #0a0a0a;
+        --brand-mark-border: #262626;
+        --brand-mark-accent: #fafafa;
+    }
+
+    /* ──────────────────────────────────────────────
+       Theme: Paper Light
+       Warm sepia/cream #faf8f5, warm amber
+       ────────────────────────────────────────────── */
+    .paper-light,
+    [data-theme="paper-light"] {
+        --background: 36 33% 97%;   /* #faf8f5 warm sepia */
+        --ground: 33 29% 94%;       /* #f5f0eb */
+        --foreground: 20 14% 10%;   /* #1c1917 */
+
+        --card: 0 0% 100%;
+        --card-foreground: 20 14% 10%;
+
+        --popover: 0 0% 100%;
+        --popover-foreground: 20 14% 10%;
+
+        --primary: 24 85% 31%;      /* #92400e warm amber */
+        --primary-foreground: 48 96% 89%; /* #fef3c7 */
+
+        --secondary: 30 25% 94%;    /* #f5f0eb */
+        --secondary-foreground: 20 14% 10%;
+
+        --muted: 30 25% 94%;
+        --muted-foreground: 24 6% 45%; /* #78716c */
+
+        --accent: 48 96% 89%;       /* #fef3c7 */
+        --accent-foreground: 24 85% 31%;
+
+        --destructive: 0 78% 56%;
+        --destructive-foreground: 0 0% 100%;
+
+        --success: 152 62% 38%;
+        --success-foreground: 0 0% 100%;
+
+        --warning: 38 92% 48%;
+        --warning-foreground: 30 60% 12%;
+
+        --border: 32 20% 88%;       /* #e7e0d8 */
+        --input: 32 20% 88%;
+        --ring: 27 89% 37%;
+
+        --brand-mark-background: #f5f0eb;
+        --brand-mark-border: #d6c5b5;
+        --brand-mark-accent: #92400e;
     }
 }
 

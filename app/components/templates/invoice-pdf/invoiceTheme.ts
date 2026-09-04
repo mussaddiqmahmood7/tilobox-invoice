@@ -26,20 +26,20 @@ export type InvoiceTheme = {
 };
 
 export const DEFAULT_INVOICE_THEME: InvoiceTheme = {
-    accentColor: "#2563EB",
+    accentColor: "#0b5fa5",
     fontId: "outfit",
     density: "comfortable",
 };
 
 /** Offered in the gallery; a custom hex is also allowed. */
 export const ACCENT_PRESETS = [
-    { name: "TiloBox Blue", value: "#2563EB" },
-    { name: "Emerald Green", value: "#059669" },
+    { name: "TiloBox Cobalt", value: "#0b5fa5" },
+    { name: "Cyber Cyan", value: "#06b6d4" },
+    { name: "Emerald Green", value: "#10b981" },
     { name: "Indigo", value: "#4F46E5" },
     { name: "Slate Black", value: "#0F172A" },
     { name: "Crimson", value: "#DC2626" },
     { name: "Teal", value: "#0F766E" },
-    { name: "Purple", value: "#7E22CE" },
     { name: "Amber", value: "#D97706" },
 ] as const;
 

@@ -248,7 +248,7 @@ export const FORM_DEFAULT_VALUES = {
     // `as const` so fontId/density keep their literal types and satisfy the
     // enums in ThemeSchema rather than widening to string.
     theme: {
-      accentColor: "#2563EB",
+      accentColor: "#0b5fa5",
       fontId: "outfit",
       density: "comfortable",
     } as const,
@@ -339,7 +339,7 @@ export const FORM_FILL_VALUES = {
     // `as const` so fontId/density keep their literal types and satisfy the
     // enums in ThemeSchema rather than widening to string.
     theme: {
-      accentColor: "#2563EB",
+      accentColor: "#0b5fa5",
       fontId: "outfit",
       density: "comfortable",
     } as const,
