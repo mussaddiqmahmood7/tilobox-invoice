@@ -95,8 +95,8 @@ export const PwaProvider = ({ children }: { children: React.ReactNode }) => {
             setDeferredPrompt(null);
             setIsStandalone(true);
             newToast({
-                title: "TiloBox Installed!",
-                description: "TiloBox Invoice has been added to your device.",
+                title: "Offline Ready!",
+                description: "TiloBox Invoice has been saved to your device for offline use.",
                 variant: "default",
             });
         };

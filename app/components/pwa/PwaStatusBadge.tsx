@@ -34,16 +34,16 @@ export default function PwaStatusBadge() {
                 </button>
             )}
 
-            {/* 3. PWA Install App Button */}
+            {/* 3. PWA Make It Offline Button */}
             {isInstallable && (
                 <button
                     type="button"
                     onClick={() => promptInstall()}
-                    className="inline-flex items-center gap-1.5 rounded-md border border-primary/20 bg-primary/10 px-2.5 py-1 text-xs font-semibold text-primary transition-all hover:bg-primary hover:text-primary-foreground"
-                    title="Install TiloBox Invoice as a standalone app on your desktop or phone"
+                    className="inline-flex items-center gap-1.5 rounded-full border border-primary/20 bg-primary/10 px-2.5 py-1 text-xs font-semibold text-primary transition-all hover:bg-primary hover:text-primary-foreground shadow-2xs"
+                    title="Make TiloBox Invoice available offline on your desktop or phone"
                 >
                     <Download className="h-3.5 w-3.5" />
-                    <span>Install App</span>
+                    <span>Make It Offline</span>
                 </button>
             )}
         </div>

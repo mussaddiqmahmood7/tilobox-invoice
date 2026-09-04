@@ -66,9 +66,9 @@ export default async function LandingContent({
         },
         {
             icon: Zap,
-            title: "Installable Offline PWA",
+            title: "Available Offline",
             description:
-                "Install on desktop, iOS, or Android. Works completely without an active internet connection with direct browser printing.",
+                "Make it offline on desktop, iOS, or Android. Works completely without an active internet connection with direct browser printing.",
         },
         {
             icon: QrCode,
@@ -142,7 +142,7 @@ export default async function LandingContent({
                         </span>
                         <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-card/80 px-3.5 py-1 text-xs font-medium text-muted-foreground shadow-2xs">
                             <Zap className="h-3.5 w-3.5 text-amber-500" />
-                            Offline PWA Ready
+                            Make It Offline
                         </span>
                     </div>
                 </div>
