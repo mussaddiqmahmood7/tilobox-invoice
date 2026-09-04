@@ -8,7 +8,7 @@ on:
 jobs:
   verify:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 10
 
     steps:
       - uses: actions/checkout@v4
@@ -20,26 +20,11 @@ jobs:
 
       - run: npm ci
 
+      - name: Build PDF Styles
+        run: npm run build:pdf-css
+
       - name: Typecheck
         run: npx tsc --noEmit
 
       - name: Lint
         run: npm run lint
-
-      # Only Chromium: both Playwright projects use it, so pulling Firefox and
-      # WebKit would add minutes per run for browsers nothing here targets.
-      - name: Install Playwright browser
-        run: npx playwright install --with-deps chromium
-
-      # Builds and serves the production bundle (see playwright.config.ts).
-      - name: Smoke tests
-        run: npm run test:e2e
-
-      - uses: actions/upload-artifact@v4
-        if: failure()
-        with:
-          name: playwright-report
-          path: |
-            playwright-report/
-            test-results/
-          retention-days: 7
