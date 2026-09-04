@@ -89,6 +89,21 @@ export async function generateMetadata(props: {
                 url: "https://tilobox.com",
             },
         ],
+        appleWebApp: {
+            capable: true,
+            statusBarStyle: "default",
+            title: "TiloBox Invoice",
+        },
+        icons: {
+            icon: [
+                { url: "/icon.svg", type: "image/svg+xml" },
+                { url: "/assets/favicon/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+                { url: "/assets/favicon/icon-192x192.png", sizes: "192x192", type: "image/png" },
+            ],
+            apple: [
+                { url: "/assets/favicon/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+            ],
+        },
         verification: {
             google: GOOGLE_SC_VERIFICATION,
         },
@@ -98,6 +113,7 @@ export async function generateMetadata(props: {
 export const viewport = {
     width: "device-width",
     initialScale: 1,
+    themeColor: "#2563EB",
 };
 
 export function generateStaticParams() {

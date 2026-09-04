@@ -12,25 +12,52 @@ export default function manifest(): MetadataRoute.Manifest {
         description:
             "Generate, customize, and download professional PDF invoices and retail receipts directly in your browser. 100% private, zero sign-up, and no database required.",
         start_url: "/",
+        scope: "/",
         display: "standalone",
+        orientation: "any",
         background_color: "#ffffff",
         theme_color: "#2563EB",
+        categories: ["business", "finance", "productivity", "utilities"],
         icons: [
             {
-                src: "/assets/favicon/android-chrome-192x192.png",
+                src: "/assets/favicon/icon-192x192.png",
                 sizes: "192x192",
                 type: "image/png",
+                purpose: "any",
             },
             {
-                src: "/assets/favicon/android-chrome-512x512.png",
+                src: "/assets/favicon/icon-512x512.png",
                 sizes: "512x512",
                 type: "image/png",
+                purpose: "any",
+            },
+            {
+                src: "/assets/favicon/icon-maskable-512x512.png",
+                sizes: "512x512",
+                type: "image/png",
+                purpose: "maskable",
             },
             {
                 src: "/assets/favicon/apple-touch-icon.png",
                 sizes: "180x180",
                 type: "image/png",
-                purpose: "maskable",
+            },
+            {
+                src: "/icon.svg",
+                sizes: "any",
+                type: "image/svg+xml",
+            },
+        ],
+        shortcuts: [
+            {
+                name: "New Invoice",
+                url: "/",
+                description: "Create a new blank invoice",
+            },
+            {
+                name: "User Guide",
+                url: "/guide",
+                description: "View documentation and guide",
             },
         ],
     };
