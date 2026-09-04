@@ -1,6 +1,7 @@
 "use client";
 
 import { useTranslationContext } from "@/contexts/TranslationContext";
+import { BrandMark } from "@/app/components/reusables/BrandMark";
 
 // Next Intl
 import { Link } from "@/i18n/navigation";
@@ -10,21 +11,43 @@ const BaseFooter = () => {
 
     return (
         // pb clears the sticky MobileActionBar, which only renders below xl
-        <footer className="border-t border-border">
-            <div className="container flex flex-col items-center justify-between gap-2 py-6 pb-28 text-sm text-muted-foreground sm:flex-row xl:pb-6">
-                <p className="text-center sm:text-start">
-                    Built with open-source love • Based on Invoify • Maintained & Enhanced by{" "}
+        <footer className="border-t border-border bg-card/30 backdrop-blur-xs">
+            <div className="container flex flex-col items-center justify-between gap-4 py-8 pb-28 text-sm text-muted-foreground sm:flex-row xl:pb-8">
+                <div className="flex flex-wrap items-center justify-center gap-3 sm:justify-start">
                     <a
                         href="https://tilobox.com"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="font-medium text-foreground underline underline-offset-4 transition-colors hover:text-primary"
+                        className="group flex items-center gap-2 font-black tracking-tight text-foreground transition-opacity hover:opacity-80"
                     >
-                        TiloBox
+                        <BrandMark className="h-6 w-6 rounded-md shadow-xs transition-transform group-hover:scale-105" />
+                        <span>
+                            Tilo<span className="text-primary">Box</span>
+                        </span>
                     </a>
-                </p>
+                    <span className="hidden text-border sm:inline">•</span>
+                    <p className="text-center sm:text-start text-xs sm:text-sm">
+                        Built with open-source love • Based on Invoify • Maintained & Enhanced by{" "}
+                        <a
+                            href="https://tilobox.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="font-medium text-foreground underline underline-offset-4 transition-colors hover:text-primary"
+                        >
+                            TiloBox
+                        </a>
+                    </p>
+                </div>
 
-                <nav>
+                <nav className="flex items-center gap-4 text-xs sm:text-sm">
+                    <a
+                        href="https://tilobox.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-medium text-muted-foreground transition-colors hover:text-primary"
+                    >
+                        TiloBox Directory
+                    </a>
                     <Link
                         href="/guide"
                         className="font-medium text-foreground underline underline-offset-4 transition-colors hover:text-primary"

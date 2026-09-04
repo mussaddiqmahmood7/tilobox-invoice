@@ -4,10 +4,9 @@ import { useMemo, useState } from "react";
 
 // Next
 import Link from "next/link";
-import Image from "next/image";
 
 // Assets
-import Logo from "@/public/assets/img/tilobox-logo.svg";
+import { BrandMark } from "@/app/components/reusables/BrandMark";
 
 // ShadCn
 import {
@@ -45,16 +44,20 @@ const BaseNavbar = () => {
     return (
         <header className="sticky top-0 z-50 border-b border-border bg-background/85 backdrop-blur supports-[backdrop-filter]:bg-background/70">
             <nav className="container flex h-16 items-center justify-between gap-4">
-                <Link href="/" className="flex shrink-0 items-center">
-                    <Image
-                        src={Logo}
-                        alt="TiloBox Invoice Logo"
-                        width={340}
-                        height={72}
-                        loading="eager"
-                        priority
-                        className="h-8 w-auto sm:h-9"
-                    />
+                <Link
+                    href="/"
+                    className="group flex shrink-0 items-center gap-2.5 transition-opacity hover:opacity-90"
+                    aria-label="TiloBox Invoice"
+                >
+                    <BrandMark className="h-9 w-9 rounded-xl shadow-xs transition-transform group-hover:scale-105" />
+                    <div className="flex items-center gap-2">
+                        <span className="text-xl font-black tracking-tight text-foreground">
+                            Tilo<span className="text-primary">Box</span>
+                        </span>
+                        <span className="border-border text-muted-foreground hidden border-l pl-2 text-xs font-semibold uppercase tracking-wider sm:inline">
+                            Invoice
+                        </span>
+                    </div>
                 </Link>
 
                 {/* ? DEV Only */}
