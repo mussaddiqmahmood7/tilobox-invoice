@@ -6,11 +6,11 @@ import { useFieldArray, useFormContext } from "react-hook-form";
 // Components
 import {
     BaseButton,
-    PartyPicker,
     FormCustomInput,
     FormInput,
     Subheading,
 } from "@/app/components";
+import ClientAddressBookModal from "@/app/components/invoice/form/ClientAddressBookModal";
 
 // Contexts
 import { useTranslationContext } from "@/contexts/TranslationContext";
@@ -45,8 +45,8 @@ const BillToSection = () => {
         <section className="flex flex-col gap-3">
             <Subheading>{_t("form.steps.fromAndTo.billTo")}:</Subheading>
 
-            {/* Save this client, or fill the fields from one saved before. */}
-            <PartyPicker kind="receiver" />
+            {/* Client Address Book (LocalStorage) */}
+            <ClientAddressBookModal />
 
             <FormInput
                 name="receiver.name"

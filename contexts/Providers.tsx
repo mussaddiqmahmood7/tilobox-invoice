@@ -95,8 +95,20 @@ const Providers = ({ children }: ProvidersProps) => {
   useEffect(() => {
     let active = true;
     readDraft().then((draft) => {
-      if (active && draft) {
-        form.reset(draft, { keepDefaultValues: false });
+      if (active) {
+        if (draft) {
+          form.reset(draft, { keepDefaultValues: false });
+        } else if (typeof window !== "undefined") {
+          try {
+            const preferredTheme = localStorage.getItem("tilobox_preferred_theme");
+            if (preferredTheme) {
+              const parsed = JSON.parse(preferredTheme);
+              form.setValue("details.theme", parsed);
+            }
+          } catch (e) {
+            console.error("Failed to load preferred theme:", e);
+          }
+        }
       }
     });
     return () => {

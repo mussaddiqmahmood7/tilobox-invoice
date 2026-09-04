@@ -480,11 +480,19 @@ const TemplateGallery = ({ variant = "field" }: TemplateGalleryProps) => {
 
     const setTheme = useCallback(
         (patch: Partial<InvoiceTheme>) => {
+            const updated = { ...theme, ...patch };
             setValue(
                 "details.theme",
-                { ...theme, ...patch },
+                updated,
                 { shouldDirty: true }
             );
+            if (typeof window !== "undefined") {
+                try {
+                    localStorage.setItem("tilobox_preferred_theme", JSON.stringify(updated));
+                } catch (e) {
+                    console.error("Failed to save preferred theme:", e);
+                }
+            }
         },
         [setValue, theme]
     );

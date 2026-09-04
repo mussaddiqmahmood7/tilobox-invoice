@@ -2,6 +2,7 @@ import React from "react";
 
 // Helpers
 import { formatDate, formatNumberWithCommas, isDataUrl } from "@/lib/helpers";
+import PaymentQrCode from "@/app/components/reusables/PaymentQrCode";
 
 // Labels & theme
 import type { InvoiceLabels } from "../invoiceLabels";
@@ -421,33 +422,75 @@ export function TotalsBlock({
 
 export function PaymentBlock({ ctx }: { ctx: PartCtx }) {
     const { data, labels, scale, locale } = ctx;
-    const pay = data.details.paymentInformation;
-    if (!pay?.bankName && !pay?.accountName && !pay?.accountNumber) return null;
+    const pay = data.details.paymentInformation as any;
+    const hasBank = Boolean(pay?.bankName || pay?.accountName || pay?.accountNumber);
+    const qr = pay?.paymentQr;
+    const hasQr = Boolean(qr?.enabled && qr?.value);
+
+    if (!hasBank && !hasQr) return null;
 
     return (
-        <div data-edit-field="details.paymentInformation.bankName">
-            <p
-                className={`${scale.label} font-semibold uppercase tracking-wider text-gray-500`}
-            >
-                {labels.paymentInfoHeading}
-            </p>
-            <div className={`${scale.body} mt-1 text-gray-700`}>
-                {pay?.bankName && (
-                    <p>
-                        {labels.bankName}: {pay.bankName}
+        <div data-edit-field="details.paymentInformation.bankName" className="space-y-3">
+            {hasBank && (
+                <div>
+                    <p
+                        className={`${scale.label} font-semibold uppercase tracking-wider text-gray-500`}
+                    >
+                        {labels.paymentInfoHeading}
                     </p>
-                )}
-                {pay?.accountName && (
-                    <p>
-                        {labels.accountName}: {pay.accountName}
-                    </p>
-                )}
-                {pay?.accountNumber && (
-                    <p className="tabular-nums">
-                        {labels.accountNumber}: {pay.accountNumber}
-                    </p>
-                )}
-            </div>
+                    <div className={`${scale.body} mt-1 text-gray-700`}>
+                        {pay?.bankName && (
+                            <p>
+                                {labels.bankName}: {pay.bankName}
+                            </p>
+                        )}
+                        {pay?.accountName && (
+                            <p>
+                                {labels.accountName}: {pay.accountName}
+                            </p>
+                        )}
+                        {pay?.accountNumber && (
+                            <p className="tabular-nums">
+                                {labels.accountNumber}: {pay.accountNumber}
+                            </p>
+                        )}
+                    </div>
+                </div>
+            )}
+
+            {hasQr && (
+                <div className="pt-1">
+                    <PaymentQrCode
+                        type={qr.type}
+                        value={qr.value}
+                        title={qr.title}
+                        amount={data.details.totalAmount}
+                        currency={data.details.currency}
+                        receiverName={pay?.accountName || data.sender.name}
+                        size={84}
+                    />
+                </div>
+            )}
+        </div>
+    );
+}
+
+export function PaymentQrBlock({ ctx }: { ctx: PartCtx }) {
+    const { data } = ctx;
+    const qr = (data.details.paymentInformation as any)?.paymentQr;
+    if (!qr?.enabled || !qr?.value) return null;
+
+    return (
+        <div className="pt-1">
+            <PaymentQrCode
+                type={qr.type}
+                value={qr.value}
+                title={qr.title}
+                amount={data.details.totalAmount}
+                currency={data.details.currency}
+                receiverName={data.details.paymentInformation?.accountName || data.sender.name}
+                size={88}
+            />
         </div>
     );
 }

@@ -130,10 +130,18 @@ const ItemSchema = z.object({
     total: fieldValidators.stringToNumber,
 });
 
+const PaymentQrSchema = z.object({
+    enabled: z.boolean().optional(),
+    type: z.enum(["upi", "paypal", "stripe", "iban", "custom"]).optional(),
+    value: fieldValidators.stringOptional,
+    title: fieldValidators.stringOptional,
+});
+
 const PaymentInformationSchema = z.object({
-    bankName: fieldValidators.stringMin1,
-    accountName: fieldValidators.stringMin1,
-    accountNumber: fieldValidators.stringMin1,
+    bankName: fieldValidators.stringOptional,
+    accountName: fieldValidators.stringOptional,
+    accountNumber: fieldValidators.stringOptional,
+    paymentQr: PaymentQrSchema.optional(),
 });
 
 const DiscountDetailsSchema = z.object({
@@ -182,6 +190,7 @@ const ThemeSchema = z.object({
 
 const InvoiceDetailsSchema = z.object({
     theme: ThemeSchema.optional(),
+    documentFormat: z.enum(["a4", "receipt"]).optional(),
     invoiceLogo: imageDataUrl.optional(),
     invoiceNumber: fieldValidators.stringMin1,
     invoiceDate: fieldValidators.date,
