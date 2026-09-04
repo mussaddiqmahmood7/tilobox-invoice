@@ -19,10 +19,10 @@ export const ENV = process.env.NODE_ENV;
  * current production host. No trailing slash.
  */
 export const BASE_URL = (
-  process.env.NEXT_PUBLIC_SITE_URL || "https://invoify.vercel.app"
+  process.env.NEXT_PUBLIC_SITE_URL || "https://invoice.tilobox.com"
 ).replace(/\/$/, "");
-export const AUTHOR_WEBSITE = "https://aliabb.vercel.app";
-export const AUTHOR_GITHUB = "https://github.com/al1abb";
+export const AUTHOR_WEBSITE = "https://tilobox.com";
+export const AUTHOR_GITHUB = "https://tilobox.com";
 
 /**
  * API endpoints
@@ -244,10 +244,11 @@ export const FORM_DEFAULT_VALUES = {
     paymentTerms: "",
     totalAmountInWords: "",
     pdfTemplate: 1,
+    documentFormat: "a4" as const,
     // `as const` so fontId/density keep their literal types and satisfy the
     // enums in ThemeSchema rather than widening to string.
     theme: {
-      accentColor: "#4F46E5",
+      accentColor: "#2563EB",
       fontId: "outfit",
       density: "comfortable",
     } as const,
@@ -334,10 +335,11 @@ export const FORM_FILL_VALUES = {
     totalAmount: "850",
     totalAmountInWords: "Eight Hundred Fifty",
     pdfTemplate: 1,
+    documentFormat: "a4" as const,
     // `as const` so fontId/density keep their literal types and satisfy the
     // enums in ThemeSchema rather than widening to string.
     theme: {
-      accentColor: "#4F46E5",
+      accentColor: "#2563EB",
       fontId: "outfit",
       density: "comfortable",
     } as const,

@@ -7,7 +7,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 // Assets
-import Logo from "@/public/assets/img/invoify-logo.svg";
+import Logo from "@/public/assets/img/tilobox-logo.svg";
 
 // ShadCn
 import {
@@ -47,12 +47,12 @@ const BaseNavbar = () => {
                 <Link href="/" className="flex shrink-0 items-center">
                     <Image
                         src={Logo}
-                        alt="Invoify Logo"
-                        width={887}
-                        height={294}
+                        alt="TiloBox Invoice Logo"
+                        width={340}
+                        height={72}
                         loading="eager"
                         priority
-                        className="h-9 w-auto sm:h-10"
+                        className="h-8 w-auto sm:h-9"
                     />
                 </Link>
 

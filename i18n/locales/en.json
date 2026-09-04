@@ -221,15 +221,15 @@
     "changeAppearance": "Change the invoice's appearance"
   },
   "meta": {
-    "title": "Free Invoice Generator | Invoify",
-    "description": "Create a professional invoice in minutes. Thirteen templates, your own colours and logo, and a PDF you can download or email. Free, no account needed.",
-    "ogTitle": "Free invoice generator",
-    "ogDescription": "Thirteen templates. Fill it in, download the PDF. No account."
+    "title": "TiloBox Invoice – Free In-Browser Invoice & Receipt Generator",
+    "description": "Generate, customize, and download professional PDF invoices and retail receipts directly in your browser. 100% private, zero sign-up, and no database required.",
+    "ogTitle": "TiloBox Invoice – Free In-Browser Invoice & Receipt Generator",
+    "ogDescription": "Generate, customize, and download professional PDF invoices and retail receipts directly in your browser. 100% private, zero sign-up, and no database required."
   },
   "landing": {
-    "h1": "Free invoice generator",
-    "intro": "Invoify builds a professional invoice in your browser and hands you a PDF. Choose one of thirteen templates, set your accent colour and typeface, add your logo and signature, and download or email the result. Nothing is uploaded to an account, because there are no accounts.",
-    "guideH1": "How Invoify works",
+    "h1": "Free In-Browser Invoice & Thermal Receipt Generator",
+    "intro": "TiloBox Invoice builds professional invoices and 80mm thermal receipts directly in your browser. Choose from thirteen A4 templates or thermal POS receipt mode, set your accent colour and typeface, add dynamic payment QR codes, and download or print the result. 100% private, zero signup, no database.",
+    "guideH1": "How TiloBox Invoice works",
     "guideIntro": "A walk through what the invoice generator does and how to use it: the thirteen templates, the things you can change about them, and the three steps from an empty form to a finished PDF.",
     "featuresHeading": "What you get",
     "features": {
@@ -264,8 +264,8 @@
     "faqHeading": "Questions",
     "faq": {
       "1": {
-        "q": "Is Invoify really free?",
-        "a": "Yes. There is no paid tier, no trial, and no account to create. The invoice generator, all thirteen templates and the PDF export are free to use."
+        "q": "Is TiloBox Invoice really free?",
+        "a": "Yes. There is no paid tier, no trial, and no account to create. The invoice and thermal receipt generator, all thirteen templates, QR code generator, and PDF exports are 100% free to use."
       },
       "2": {
         "q": "Do I need to sign up?",

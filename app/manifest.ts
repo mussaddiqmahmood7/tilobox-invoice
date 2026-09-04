@@ -7,14 +7,14 @@ import type { MetadataRoute } from "next";
  */
 export default function manifest(): MetadataRoute.Manifest {
     return {
-        name: "Invoify — Free Invoice Generator",
-        short_name: "Invoify",
+        name: "TiloBox Invoice – Free In-Browser Invoice & Receipt Generator",
+        short_name: "TiloBox Invoice",
         description:
-            "Build an invoice from thirteen templates and download it as a PDF.",
+            "Generate, customize, and download professional PDF invoices and retail receipts directly in your browser. 100% private, zero sign-up, and no database required.",
         start_url: "/",
         display: "standalone",
         background_color: "#ffffff",
-        theme_color: "#4F46E5",
+        theme_color: "#2563EB",
         icons: [
             {
                 src: "/assets/favicon/android-chrome-192x192.png",

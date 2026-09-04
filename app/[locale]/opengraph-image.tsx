@@ -11,7 +11,7 @@ import { getMessages } from "@/i18n/messages";
  * to the site unfurled as a bare URL — and `lib/seo.ts` pointed its JSON-LD
  * `image` at a hashed build artefact that 404s after any rebuild.
  */
-export const alt = "Invoify — free invoice generator";
+export const alt = "TiloBox Invoice — Free In-Browser Invoice & Receipt Generator";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -22,10 +22,10 @@ export default async function OpengraphImage(props: {
     const messages = await getMessages(locale);
     const meta = (messages as Record<string, Record<string, string>>)?.meta ?? {};
 
-    const title = meta.ogTitle ?? "Free invoice generator";
+    const title = meta.ogTitle ?? "TiloBox Invoice – Free In-Browser Invoice & Receipt Generator";
     const description =
         meta.ogDescription ??
-        "Thirteen templates. Fill it in, download the PDF. No account.";
+        "Generate, customize, and download professional PDF invoices and retail receipts directly in your browser. 100% private, zero sign-up, and no database required.";
 
     return new ImageResponse(
         (
@@ -36,7 +36,7 @@ export default async function OpengraphImage(props: {
                     display: "flex",
                     flexDirection: "column",
                     justifyContent: "space-between",
-                    background: "#0F1017",
+                    background: "#0F172A",
                     padding: 72,
                     // Satori has no default font stack; system-ui resolves on
                     // the render host.
@@ -49,7 +49,7 @@ export default async function OpengraphImage(props: {
                             width: 56,
                             height: 56,
                             borderRadius: 14,
-                            background: "#6C63FF",
+                            background: "#2563EB",
                             display: "flex",
                             alignItems: "center",
                             justifyContent: "center",
@@ -58,31 +58,31 @@ export default async function OpengraphImage(props: {
                             fontWeight: 700,
                         }}
                     >
-                        I
+                        T
                     </div>
-                    <div style={{ color: "#8E88F7", fontSize: 34, fontWeight: 700 }}>
-                        Invoify
+                    <div style={{ color: "#60A5FA", fontSize: 34, fontWeight: 700 }}>
+                        TiloBox Invoice
                     </div>
                 </div>
 
                 <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
                     <div
                         style={{
-                            color: "#ECEDF3",
-                            fontSize: 66,
+                            color: "#F8FAFC",
+                            fontSize: 62,
                             fontWeight: 700,
-                            lineHeight: 1.1,
-                            maxWidth: 900,
+                            lineHeight: 1.15,
+                            maxWidth: 950,
                         }}
                     >
                         {title}
                     </div>
                     <div
                         style={{
-                            color: "#969CB0",
-                            fontSize: 30,
-                            lineHeight: 1.35,
-                            maxWidth: 860,
+                            color: "#94A3B8",
+                            fontSize: 28,
+                            lineHeight: 1.4,
+                            maxWidth: 880,
                         }}
                     >
                         {description}
@@ -93,11 +93,11 @@ export default async function OpengraphImage(props: {
                     style={{
                         display: "flex",
                         gap: 12,
-                        color: "#6E7488",
+                        color: "#64748B",
                         fontSize: 24,
                     }}
                 >
-                    <span>invoify.vercel.app</span>
+                    <span>invoice.tilobox.com</span>
                 </div>
             </div>
         ),

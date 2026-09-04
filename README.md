@@ -1,158 +1,98 @@
-[![Discord](https://img.shields.io/badge/Discord-%40Invoify-000000?style=flat&logo=Discord&logoColor=#5865F2)](https://discord.gg/uhXKHbVKHZ)
-[![CI](https://github.com/al1abb/invoify/actions/workflows/ci.yml/badge.svg)](https://github.com/al1abb/invoify/actions/workflows/ci.yml)
-# Invoify
+# TiloBox Invoice
 
-Invoify is a free, web-based invoice generator built with Next.js, TypeScript, React and the shadcn/ui library. Fill in a form, pick a template, and get a real PDF. No account, no subscription, and nothing about your customers stored on a server.
+> **Free, Fast & Secure In-Browser Invoice & Thermal Receipt Generator**  
+> *Built with open-source love • Based on Invoify • Maintained & Enhanced by TiloBox*
 
-![Invoify Website image](https://github.com/user-attachments/assets/7b7076db-736e-4a82-b61b-cec3c0ff5695)
+TiloBox Invoice is a modern, zero-database, client-side billing web tool built with Next.js 15, TypeScript, React, and Tailwind CSS / shadcn/ui. Designed for freelancers, agencies, consultants, retail stores, cafes, and small businesses, it lets you generate professional PDF invoices and 80mm thermal POS receipts straight from your browser.
 
-## Table of Contents
+100% private, zero signup, no database required, and ready for instant deployment on Vercel.
 
-- [Invoify](#invoify)
-  - [Table of Contents](#table-of-contents)
-  - [Features](#features)
-  - [Your data stays in your browser](#your-data-stays-in-your-browser)
-  - [Languages](#languages)
-  - [Technologies](#technologies)
-    - [Core Technologies](#core-technologies)
-    - [Additional Dependencies](#additional-dependencies)
-  - [Demo](#demo)
-  - [Getting Started](#getting-started)
-    - [Prerequisites](#prerequisites)
-    - [Installation](#installation)
-    - [Environment variables](#environment-variables)
-  - [Development](#development)
-    - [Scripts](#scripts)
-    - [Tests](#tests)
-  - [License](#license)
-  - [Discord](#discord)
+---
 
-## Features
+## Key Features
 
-- **13 invoice templates:** Classic, Modern, Sidebar, Bold Header, Minimal, Letterhead, Compact, Two-Tone, Bordered, Left Rail, Statement, Corner and Column.
-- **Live preview:** edit the form and watch the invoice update as you type.
-- **Real PDFs:** rendered with headless Chromium, not a screenshot of the page.
-- **Email delivery:** send the finished PDF straight to your client.
-- **Save and reload:** keep invoices in your browser and load them back later.
-- **Address book:** save senders and clients once, reuse them on every invoice.
-- **Export:** download the invoice data as JSON, CSV or XML.
-- **Signatures, logos and custom line items,** including per-invoice tax, discount and shipping.
-- **18 languages,** for both the interface and the generated PDF.
-- **Responsive:** works on a phone as well as a desktop.
+- **📄 Standard A4 Invoices & 🧾 80mm POS Thermal Receipts**: Seamless one-click toggle between standard full A4 consulting/B2B invoices and compact 80mm thermal receipts with `@media print` thermal printer support.
+- **📱 Dynamic Payment QR Code Generator**: Enable payment QR codes on any invoice or receipt for UPI, PayPal, Stripe, IBAN / EPC, or custom payment links.
+- **👥 Client Address Book (LocalStorage)**: Save clients with contact details and Tax ID/VAT to browser storage (`tilobox_saved_clients`) for instant one-click auto-fill, editing, and management.
+- **🎨 Custom Color Theme & Modern Accent Picker**: Choose from modern presets (TiloBox Blue, Emerald Green, Indigo, Slate Black, Crimson) or choose any custom Hex color. Your preference is automatically persisted.
+- **📑 13 Professional A4 Invoice Templates**: Classic, Modern, Sidebar, Bold Header, Minimal, Letterhead, Compact, Two-Tone, Bordered, Left Rail, Statement, Corner, and Column.
+- **⚡ Live Interactive Preview**: See changes instantly with debounced live previews and click-to-jump direct field editing.
+- **🔒 100% Private & Client-Side**: No user tracking, no backend database. Your data is stored locally in your browser and encrypted at rest with AES-GCM 256.
+- **🌍 18 Languages & Full RTL Support**: Full multi-lingual support including Arabic and Hebrew right-to-left layouts.
+- **✉️ Direct PDF Export & Email**: Generate native Chromium-rendered vector PDFs or email documents directly.
+- **🚀 Zero-Configuration Vercel Deployment**: No database connections, no API keys, and zero required backend environment variables.
 
-A walkthrough of what each part does lives on the [guide page](https://invoify.vercel.app/en/guide).
+---
 
-## Your data stays in your browser
+## Attribution & Licensing
 
-Invoify has no accounts and no database. Everything you enter (the address book, the autosave draft and your saved invoices) is stored locally, and it is encrypted at rest with AES-GCM 256 under a key the browser generates as non-extractable, so the key cannot be copied out of the origin.
+This project is an enhanced, modern distribution maintained by [TiloBox](https://tilobox.com). It builds upon the fantastic open-source foundation of [Invoify](https://github.com/al1abb/invoify) created by Ali Abbasov.
 
-Two things worth being clear about:
+- Original codebase: Copyright (c) 2023 Ali Abbasov
+- Modifications, branding, and custom features: Copyright (c) 2026 TiloBox (https://tilobox.com)
+- Licensed under the [MIT License](LICENSE).
 
-- This protects you against someone **reading the browser profile off disk**: a shared or stolen machine, a filesystem backup, a synced profile, another OS account.
-- It does **not** protect against a script injected into the page, which holds the same key handle the app does. Defending against that would need a passphrase the app never stores.
+---
 
-The only time invoice data leaves your machine is when you generate a PDF or send one by email, and it is not retained afterwards.
+## Tech Stack
 
-## Languages
+- **Framework**: Next.js 15 (App Router, Server Components & Route Handlers)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS, PostCSS, Radix UI & shadcn/ui
+- **PDF Generation**: Puppeteer Core & `@sparticuz/chromium` (embedded fonts, zero external network calls)
+- **Forms & Validation**: React Hook Form, Zod
+- **Localization**: next-intl (18 locales)
+- **Storage**: Browser LocalStorage & Web Crypto API (AES-GCM encryption at rest)
 
-Arabic, Azerbaijani, Catalan, Chinese (Simplified), English, French, German, Hebrew, Indonesian, Italian, Japanese, Norwegian (Bokmål), Norwegian (Nynorsk), Polish, Portuguese (Brazil), Serbian, Spanish and Turkish.
-
-Right-to-left layouts are supported for Arabic and Hebrew. Some PDF translations are still incomplete and fall back to English.
-
-## Technologies
-
-### Core Technologies
-
-- **Next.js 15:** React framework for SSR and client-side navigation.
-- **TypeScript:** JavaScript superset with static typing.
-- **Shadcn-UI:** UI library for enhanced visuals.
-- **Tailwind:** Utility-first CSS framework.
-- **React Hook Form:** Form management for React.
-- **Zod:** TypeScript-first schema validation.
-- **Puppeteer:** PDF generation with headless browsers.
-- **next-intl:** Internationalized routing and messages.
-
-### Additional Dependencies
-
-- **Nodemailer:** Node.js module for sending emails.
-- **Lucide Icons:** Collection of customizable SVG icons.
-- **Playwright:** End-to-end tests.
-
-## Demo
-
-> [!NOTE]
-> [Issue #11](https://github.com/al1abb/invoify/issues/11) reports PDF generation problems in Mozilla Firefox and is still open. The automated tests run against Chromium only, so the current state in Firefox is untested.
-
-Visit the [live demo](https://invoify.vercel.app) to see Invoify in action.
+---
 
 ## Getting Started
 
-Follow these instructions to get Invoify up and running on your local machine.
-
 ### Prerequisites
 
-- Node.js 20 or later, and npm.
+- Node.js 20 or later
+- npm or pnpm
 
 ### Installation
 
 1. Clone the repository:
-
    ```bash
-   git clone https://github.com/al1abb/invoify.git
-   cd invoify
+   git clone https://github.com/mussaddiqmahmood7/Tilobox-Invoice.git
+   cd Tilobox-Invoice
    ```
-2. Install dependencies
 
+2. Install dependencies:
    ```bash
    npm install
    ```
-3. Create an `.env.local` file. See [Environment variables](#environment-variables) below. You can skip this if you do not need the "send PDF by email" feature.
-4. Start development server
 
+3. Run the development server:
    ```bash
    npm run dev
    ```
-5. Open your web browser and access the application at [http://localhost:3000](http://localhost:3000)
 
-### Environment variables
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-All of these are optional; the app runs without them, minus the features they enable.
+---
 
-| Variable | Required for | Notes |
-| --- | --- | --- |
-| `NODEMAILER_EMAIL` | Sending invoices by email | The Gmail address that sends the mail. |
-| `NODEMAILER_PW` | Sending invoices by email | A [Gmail **App Password**](https://support.google.com/accounts/answer/185833), **not** your account password. Requires 2-Step Verification. |
+## Deployment to Vercel
 
-## Development
+TiloBox Invoice runs out of the box with **zero required backend environment variables**:
 
-### Scripts
+1. Push your repository to GitHub / GitLab / Bitbucket.
+2. Import the project in the [Vercel Dashboard](https://vercel.com).
+3. Leave all build settings as default (`next build`) and deploy.
+4. (Optional) Set `NEXT_PUBLIC_SITE_URL` to your custom domain (e.g. `https://invoice.tilobox.com`).
 
-| Command | What it does |
+---
+
+## Available Scripts
+
+| Command | Description |
 | --- | --- |
-| `npm run dev` | Development server. |
-| `npm run build` | Production build. |
-| `npm run start` | Serve the production build. |
-| `npm run lint` | ESLint. |
-| `npm run format` | Prettier, writing in place. |
-| `npm run test:e2e` | Playwright end-to-end tests. |
-| `npm run test:e2e:ui` | The same tests in Playwright's UI mode. |
-| `npm run analyze` | Production build with the bundle analyzer. |
-| `npx tsc --noEmit` | Typecheck. |
-
-`predev` and `prebuild` run `scripts/build-pdf-css.mjs`, which compiles the stylesheet the PDF renderer inlines. It runs automatically, so you only need `npm run build:pdf-css` if you change PDF styling and want to rebuild it on its own.
-
-### Tests
-
-```bash
-npx playwright install --with-deps chromium
-npm run test:e2e
-```
-
-The suite builds and serves the production bundle, then runs against it in a desktop and a mobile viewport. CI runs the same typecheck, lint and test steps on every push and pull request. See [`.github/workflows/ci.yml`](.github/workflows/ci.yml).
-
-## License
-
-Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information.
-
-## Discord
-Join the Discord server [here](https://discord.gg/uhXKHbVKHZ)
+| `npm run dev` | Starts development server with pre-built PDF stylesheet |
+| `npm run build` | Compiles production Next.js build |
+| `npm run start` | Runs production server |
+| `npm run lint` | Runs ESLint |
+| `npx tsc --noEmit` | Runs TypeScript type checker |
+| `npm run build:pdf-css` | Compiles embedded Tailwind CSS for Chromium PDF renderer |

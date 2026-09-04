@@ -3,9 +3,12 @@ import { AUTHOR_WEBSITE, BASE_URL, DEFAULT_LOCALE, LOCALES } from "@/lib/variabl
 export const ROOTKEYWORDS = [
     "invoice",
     "invoice generator",
-    "invoice generating",
-    "invoice app",
-    "invoice generator app",
+    "receipt generator",
+    "80mm thermal receipt",
+    "pos receipt generator",
+    "tilobox invoice",
+    "tilobox",
+    "in-browser invoice",
     "free invoice generator",
     "invoice template",
     "pdf invoice",
@@ -48,12 +51,12 @@ export function buildJsonLd(locale: string) {
         "@context": "https://schema.org",
         "@type": "WebApplication",
         "@id": `${BASE_URL}/#app`,
-        name: "Invoify",
+        name: "TiloBox Invoice",
         url,
         applicationCategory: "BusinessApplication",
         operatingSystem: "Any",
         description:
-            "Free invoice generator. Build an invoice from thirteen templates and download it as a PDF.",
+            "Free, fast and secure in-browser invoice and receipt generator. Build invoices and 80mm thermal receipts with zero database.",
         inLanguage: locale,
         keywords: ROOTKEYWORDS,
         // Generated on demand by app/[locale]/opengraph-image.tsx, so it cannot
@@ -65,8 +68,8 @@ export function buildJsonLd(locale: string) {
             priceCurrency: "USD",
         },
         author: {
-            "@type": "Person",
-            name: "Ali Abbasov",
+            "@type": "Organization",
+            name: "TiloBox",
             url: AUTHOR_WEBSITE,
         },
     };
