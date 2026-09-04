@@ -73,7 +73,7 @@ const InvoiceForm = () => {
                   */}
                 <div className="mb-4 flex flex-wrap items-center justify-between gap-x-4 gap-y-1 shell:mb-3">
                     <AutosaveIndicator />
-                    <span className="text-sm font-medium text-muted-foreground">
+                    <span className="inline-flex items-center rounded-md border border-border bg-card px-2 py-0.5 text-xs font-semibold tabular-nums text-muted-foreground shadow-2xs">
                         {invoiceNumberLabel}
                     </span>
                 </div>

@@ -30,7 +30,7 @@ export default function FormatToggle({ className = "", variant: _variant = "defa
             role="group"
             aria-label="Document format mode selector"
             className={cn(
-                "inline-flex items-center rounded-lg border border-border bg-muted/60 p-1 text-xs shadow-sm",
+                "inline-flex items-center rounded-full border border-border bg-card/80 p-1 text-xs shadow-2xs backdrop-blur-xs",
                 className
             )}
         >
@@ -39,15 +39,15 @@ export default function FormatToggle({ className = "", variant: _variant = "defa
                 aria-pressed={!isReceipt}
                 onClick={() => setFormat("a4")}
                 className={cn(
-                    "inline-flex items-center gap-1.5 rounded-md px-2.5 py-1 font-medium transition-all",
+                    "inline-flex items-center gap-1.5 rounded-full px-3 py-1 font-medium transition-all duration-200",
                     !isReceipt
-                        ? "bg-background text-foreground shadow-sm ring-1 ring-border/50 font-semibold"
+                        ? "bg-primary text-primary-foreground shadow-xs font-semibold"
                         : "text-muted-foreground hover:text-foreground"
                 )}
                 title="Standard A4 invoice layout for consulting, freelancers, and B2B billing"
             >
-                <FileText className="h-3.5 w-3.5 text-primary" />
-                <span>Standard A4 Invoice</span>
+                <FileText className="h-3.5 w-3.5" />
+                <span>Standard A4</span>
             </button>
 
             <button
@@ -55,15 +55,15 @@ export default function FormatToggle({ className = "", variant: _variant = "defa
                 aria-pressed={isReceipt}
                 onClick={() => setFormat("receipt")}
                 className={cn(
-                    "inline-flex items-center gap-1.5 rounded-md px-2.5 py-1 font-medium transition-all",
+                    "inline-flex items-center gap-1.5 rounded-full px-3 py-1 font-medium transition-all duration-200",
                     isReceipt
-                        ? "bg-background text-foreground shadow-sm ring-1 ring-border/50 font-semibold"
+                        ? "bg-emerald-600 text-white dark:bg-emerald-500 shadow-xs font-semibold"
                         : "text-muted-foreground hover:text-foreground"
                 )}
                 title="Compact 80mm thermal receipt format for retail, cafes, POS, and thermal printers"
             >
-                <Receipt className="h-3.5 w-3.5 text-emerald-600 dark:text-emerald-400" />
-                <span>80mm POS Receipt</span>
+                <Receipt className="h-3.5 w-3.5" />
+                <span>80mm POS</span>
             </button>
         </div>
     );
