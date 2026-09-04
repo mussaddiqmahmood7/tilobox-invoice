@@ -140,6 +140,7 @@ const useToasts = () => {
         exportInvoiceError,
         formValidationError,
         importInvoiceError,
+        newToast: toast,
     };
 };
 

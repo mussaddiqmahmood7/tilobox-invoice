@@ -62,6 +62,7 @@ import BaseButton from "./reusables/BaseButton";
 import ThemeSwitcher from "./reusables/ThemeSwitcher";
 import LanguageSelector from "./reusables/LanguageSelector";
 import Subheading from "./reusables/Subheading";
+import PwaStatusBadge from "./pwa/PwaStatusBadge";
 
 /* =========================
    * Modals & Alerts
@@ -153,6 +154,7 @@ export {
     ThemeSwitcher,
     LanguageSelector,
     Subheading,
+    PwaStatusBadge,
     SendPdfToEmailModal,
     InvoiceLoaderModal,
     InvoiceExportModal,

@@ -22,6 +22,7 @@ import { ThemeProvider } from "@/contexts/ThemeProvider";
 import { TranslationProvider } from "@/contexts/TranslationContext";
 import { InvoiceContextProvider } from "@/contexts/InvoiceContext";
 import { ChargesContextProvider } from "@/contexts/ChargesContext";
+import { PwaProvider } from "@/contexts/PwaContext";
 
 // Storage
 import { readSecure } from "@/lib/secureStore";
@@ -126,11 +127,13 @@ const Providers = ({ children }: ProvidersProps) => {
       disableTransitionOnChange
     >
       <TranslationProvider>
-        <FormProvider {...form}>
-          <InvoiceContextProvider>
-            <ChargesContextProvider>{children}</ChargesContextProvider>
-          </InvoiceContextProvider>
-        </FormProvider>
+        <PwaProvider>
+          <FormProvider {...form}>
+            <InvoiceContextProvider>
+              <ChargesContextProvider>{children}</ChargesContextProvider>
+            </InvoiceContextProvider>
+          </FormProvider>
+        </PwaProvider>
       </TranslationProvider>
     </ThemeProvider>
     </DirectionProvider>

@@ -24,6 +24,7 @@ import {
     DevDebug,
     LanguageSelector,
     ThemeSwitcher,
+    PwaStatusBadge,
 } from "@/app/components";
 
 // Contexts
@@ -65,6 +66,7 @@ const BaseNavbar = () => {
 
                 {/* Desktop controls */}
                 <div className="hidden items-center gap-2 sm:flex">
+                    <PwaStatusBadge />
                     <LanguageSelector />
                     <ThemeSwitcher />
                 </div>
@@ -73,7 +75,8 @@ const BaseNavbar = () => {
                  * Below sm the language select alone is wider than the space
                  * left beside the logo, so both controls move into a sheet.
                  */}
-                <div className="flex items-center gap-1 sm:hidden">
+                <div className="flex items-center gap-1.5 sm:hidden">
+                    <PwaStatusBadge />
                     <ThemeSwitcher />
                     <Sheet open={menuOpen} onOpenChange={setMenuOpen}>
                         <SheetTrigger asChild>
