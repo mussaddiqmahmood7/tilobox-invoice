@@ -97,6 +97,7 @@ export async function generateMetadata(props: {
         icons: {
             icon: [
                 { url: "/icon.svg", type: "image/svg+xml" },
+                { url: "/favicon.ico", sizes: "any" },
                 { url: "/assets/favicon/favicon-32x32.png", sizes: "32x32", type: "image/png" },
                 { url: "/assets/favicon/icon-192x192.png", sizes: "192x192", type: "image/png" },
             ],
@@ -113,7 +114,7 @@ export async function generateMetadata(props: {
 export const viewport = {
     width: "device-width",
     initialScale: 1,
-    themeColor: "#2563EB",
+    themeColor: "#0b5fa5",
 };
 
 export function generateStaticParams() {
