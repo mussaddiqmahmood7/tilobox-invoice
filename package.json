@@ -96,12 +96,5 @@
     "prettier": "3.4.2",
     "puppeteer": "^24.10.0"
   },
-  "overrides": {
-    "@radix-ui/react-dismissable-layer": "1.1.19"
-  },
-  "pnpm": {
-    "overrides": {
-      "@radix-ui/react-dismissable-layer": "1.1.19"
-    }
-  }
+  "packageManager": "pnpm@10.34.5"
 }
