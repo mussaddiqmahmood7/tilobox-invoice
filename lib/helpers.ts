@@ -50,6 +50,12 @@ const formatNumberWithCommas = (number: number) => {
  * @returns {string} Number in words
  */
 const formatPriceToString = (price: number, currency: string): string => {
+    // Guard against NaN, Infinity, or negative/non-numeric values
+    if (typeof price !== "number" || isNaN(price) || !isFinite(price) || price < 0) {
+        if (price === 0) return "Zero";
+        return "";
+    }
+
     // Initialize variables
     let decimals : number;
     let beforeDecimal: string | null = null;

@@ -158,33 +158,24 @@ export const ChargesContextProvider = ({ children }: ChargesContextProps) => {
      * Calculates the subtotal, total, and the total amount in words on the invoice.
      */
     const calculateTotal = useCallback(() => {
-        // Here Number(item.total) fixes a bug where an extra zero appears
-        // at the beginning of subTotal caused by toFixed(2) in item.total in single item
-        // Reason: toFixed(2) returns string, not a number instance
-        const totalSum: number = itemsArray.reduce(
-            (sum: number, item: ItemType) => sum + Number(item.total),
+        const totalSum: number = (itemsArray || []).reduce(
+            (sum: number, item: ItemType) => sum + (Number(item?.total) || 0),
             0
         );
 
-        setValue("details.subTotal", totalSum);
-        setSubTotal(totalSum);
+        const cleanSubTotal = Math.max(0, parseFloat(totalSum.toFixed(2)));
+        setValue("details.subTotal", cleanSubTotal);
+        setSubTotal(cleanSubTotal);
 
-        /*
-         * The `?? 0` these carried was dead: parseFloat returns NaN for bad
-         * input, and `??` only guards null/undefined. The isNaN checks below
-         * are what actually handle it, so the fallback is dropped rather than
-         * replaced — defaulting to 0 here would change behaviour by making the
-         * guarded blocks run (and setValue) on invalid input.
-         */
-        const discountAmount: number = parseFloat(discount!.amount.toString());
-        const taxAmount: number = parseFloat(tax!.amount.toString());
-        const shippingCost: number = parseFloat(shipping!.cost.toString());
+        const discountAmount: number = parseFloat(String(discount?.amount ?? ""));
+        const taxAmount: number = parseFloat(String(tax?.amount ?? ""));
+        const shippingCost: number = parseFloat(String(shipping?.cost ?? ""));
 
         let discountAmountType: string = "amount";
         let taxAmountType: string = "amount";
         let shippingCostType: string = "amount";
 
-        let total: number = totalSum;
+        let total: number = cleanSubTotal;
 
         if (!isNaN(discountAmount)) {
             if (discountType == "amount") {
@@ -219,16 +210,19 @@ export const ChargesContextProvider = ({ children }: ChargesContextProps) => {
             setValue("details.shippingDetails.cost", shippingCost);
         }
 
-        setTotalAmount(total);
+        // Clamp total to 0 minimum and 2 decimal places to avoid floating point anomalies or negative totals
+        const cleanTotal = Math.max(0, parseFloat((isNaN(total) ? 0 : total).toFixed(2)));
+
+        setTotalAmount(cleanTotal);
 
         setValue("details.discountDetails.amountType", discountAmountType);
         setValue("details.taxDetails.amountType", taxAmountType);
         setValue("details.shippingDetails.costType", shippingCostType);
 
-        setValue("details.totalAmount", total);
+        setValue("details.totalAmount", cleanTotal);
         
         if (totalInWordsSwitch) {
-            setValue("details.totalAmountInWords", formatPriceToString(total, getValues("details.currency")));
+            setValue("details.totalAmountInWords", formatPriceToString(cleanTotal, getValues("details.currency")));
         } else {
             setValue("details.totalAmountInWords", "");
         }
