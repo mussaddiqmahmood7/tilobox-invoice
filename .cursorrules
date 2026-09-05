@@ -1,0 +1,12 @@
+# Cursor Rules for TiloBox Invoice
+
+Read and follow all guidelines, invariant rules, and architectural decisions from:
+1. `AGENTS.md` (Master Agent Handbook)
+2. `docs/decisions/` (Architecture Decision Records)
+
+## Key Project Invariants
+- Do not fall back to `window.print()` inside `generatePdf()`.
+- Do not create `public/favicon.ico` (Next.js App Router `app/favicon.ico` handles it).
+- Do not add `config.resolve.symlinks = false` in `next.config.js`.
+- Always verify with `pnpm check` before committing.
+- Document any new architectural decisions in `docs/decisions/` following the ADR format.
