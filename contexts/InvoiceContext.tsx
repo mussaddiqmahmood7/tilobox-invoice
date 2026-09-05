@@ -20,8 +20,7 @@ import { useFormContext } from "react-hook-form";
 // Hooks
 import useToasts from "@/hooks/useToasts";
 
-// Services
-import { exportInvoice } from "@/services/invoice/client/exportInvoice";
+import { exportInvoice, exportInvoiceClient } from "@/services/invoice/client/exportInvoice";
 
 // Validation
 import { InvoiceSchema } from "@/lib/schemas";
@@ -550,33 +549,23 @@ export const InvoiceContextProvider = ({
   const exportInvoiceAs = (exportAs: ExportTypes) => {
     const formValues = getValues();
 
-    // Client-side offline handling
+    // Client-side offline handling: All formats (JSON, CSV, XML) work 100% offline
     if (typeof navigator !== "undefined" && !navigator.onLine) {
-      if (exportAs === ExportTypes.JSON) {
-        const jsonStr = JSON.stringify(formValues, null, 2);
-        const blob = new Blob([jsonStr], { type: "application/json" });
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement("a");
-        a.href = url;
-        a.download = `invoice-${formValues.details.invoiceNumber || "draft"}.json`;
-        a.click();
-        URL.revokeObjectURL(url);
+      try {
+        exportInvoiceClient(exportAs, formValues);
         newToast({
-          title: "Invoice Exported",
-          description: "JSON file saved to your device.",
+          title: "Invoice Exported (Offline)",
+          description: `${exportAs} file saved to your device without internet.`,
           variant: "default",
         });
-        return;
+      } catch (e) {
+        console.error("Offline export error:", e);
+        exportInvoiceError();
       }
-      newToast({
-        title: "Offline Mode",
-        description: "JSON export and printing work offline. Connect to internet for XLSX/DOCX exports.",
-        variant: "default",
-      });
       return;
     }
 
-    // Service to export invoice with given parameters
+    // Service to export invoice with automatic client-side fallback
     exportInvoice(exportAs, formValues).catch((error) => {
       console.error("Error exporting invoice:", error);
       exportInvoiceError();

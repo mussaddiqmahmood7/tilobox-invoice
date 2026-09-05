@@ -35,7 +35,7 @@ export async function exportInvoiceService(req: NextRequest) {
     try {
         switch (format) {
             case ExportTypes.JSON: {
-                const jsonData = JSON.stringify(body);
+                const jsonData = JSON.stringify(body, null, 2);
                 return new NextResponse(jsonData, {
                     headers: {
                         "Content-Type": "application/json",
@@ -46,24 +46,71 @@ export async function exportInvoiceService(req: NextRequest) {
                 });
             }
             case ExportTypes.CSV: {
-                //? Can pass specific fields to async parser. Empty = All
+                const items = body.details.items && body.details.items.length > 0
+                    ? body.details.items
+                    : [{ name: "", description: "", quantity: 0, unitPrice: 0, total: 0 }];
+
+                const tabularRows = items.map((item, idx) => ({
+                    "Invoice Number": body.details.invoiceNumber || "",
+                    "Invoice Date": body.details.invoiceDate || "",
+                    "Due Date": body.details.dueDate || "",
+                    "Currency": body.details.currency || "USD",
+                    "From Name": body.sender.name || "",
+                    "From Email": body.sender.email || "",
+                    "From Phone": body.sender.phone || "",
+                    "From Address": body.sender.address || "",
+                    "From City": body.sender.city || "",
+                    "From Country": body.sender.country || "",
+                    "To Name": body.receiver.name || "",
+                    "To Email": body.receiver.email || "",
+                    "To Phone": body.receiver.phone || "",
+                    "To Address": body.receiver.address || "",
+                    "To City": body.receiver.city || "",
+                    "To Country": body.receiver.country || "",
+                    "Item #": idx + 1,
+                    "Item Name": item.name || "",
+                    "Item Description": item.description || "",
+                    "Quantity": item.quantity ?? 0,
+                    "Unit Price": item.unitPrice ?? 0,
+                    "Item Total": item.total ?? 0,
+                    "Sub Total": body.details.subTotal ?? 0,
+                    "Discount": body.details.discountDetails?.amount ?? 0,
+                    "Tax": body.details.taxDetails?.amount ?? 0,
+                    "Shipping": body.details.shippingDetails?.cost ?? 0,
+                    "Total Amount": body.details.totalAmount ?? 0,
+                    "Payment Terms": body.details.paymentTerms || "",
+                    "Bank Name": body.details.paymentInformation?.bankName || "",
+                    "Account Number": body.details.paymentInformation?.accountNumber || "",
+                    "Notes": body.details.additionalNotes || "",
+                }));
+
                 const parser = new AsyncParser();
-                const csv = await parser.parse(body).promise();
+                const csv = await parser.parse(tabularRows).promise();
                 return new NextResponse(csv, {
                     headers: {
-                        "Content-Type": "text/csv",
+                        "Content-Type": "text/csv; charset=utf-8",
                         "Content-Disposition":
                             "attachment; filename=invoice.csv",
                     },
                 });
             }
             case ExportTypes.XML: {
-                // Convert JSON to XML
-                const builder = new Builder();
-                const xml = builder.buildObject(body);
+                // Strip massive base64 image strings so the XML document is clean, readable and fast
+                const sanitizedBody = {
+                    ...body,
+                    details: {
+                        ...body.details,
+                        invoiceLogo: body.details.invoiceLogo ? "[Embedded Image]" : undefined,
+                        signature: body.details.signature
+                            ? { ...body.details.signature, data: "[Embedded Signature]" }
+                            : undefined,
+                    },
+                };
+                const builder = new Builder({ rootName: "invoice", headless: false });
+                const xml = builder.buildObject(sanitizedBody);
                 return new NextResponse(xml, {
                     headers: {
-                        "Content-Type": "application/xml",
+                        "Content-Type": "application/xml; charset=utf-8",
                         "Content-Disposition":
                             "attachment; filename=invoice.xml",
                     },
