@@ -27,28 +27,28 @@ const fieldValidators = {
     name: z
         .string()
         .min(2, { message: "Must be at least 2 characters" })
-        .max(50, { message: "Must be at most 50 characters" }),
+        .max(120, { message: "Must be between 2 and 120 characters" }),
     address: z
         .string()
         .min(2, { message: "Must be at least 2 characters" })
-        .max(70, { message: "Must be between 2 and 70 characters" }),
+        .max(250, { message: "Must be between 2 and 250 characters" }),
     zipCode: z
         .string()
         .min(2, { message: "Must be between 2 and 20 characters" })
         .max(20, { message: "Must be between 2 and 20 characters" }),
     city: z
         .string()
-        .min(1, { message: "Must be between 1 and 50 characters" })
-        .max(50, { message: "Must be between 1 and 50 characters" }),
+        .min(1, { message: "Must be between 1 and 100 characters" })
+        .max(100, { message: "Must be between 1 and 100 characters" }),
     country: z
         .string()
-        .min(1, { message: "Must be between 1 and 70 characters" })
-        .max(70, { message: "Must be between 1 and 70 characters" }),
+        .min(1, { message: "Must be between 1 and 100 characters" })
+        .max(100, { message: "Must be between 1 and 100 characters" }),
     email: z
         .string()
         .email({ message: "Email must be a valid email" })
-        .min(5, { message: "Must be between 5 and 30 characters" })
-        .max(30, { message: "Must be between 5 and 30 characters" }),
+        .min(5, { message: "Must be between 5 and 254 characters" })
+        .max(254, { message: "Must be between 5 and 254 characters" }),
     phone: z
         .string()
         .min(1, { message: "Must be between 1 and 50 characters" })
@@ -59,25 +59,27 @@ const fieldValidators = {
     /*
      * Dates.
      *
-     * On the client react-hook-form holds real Date objects, but JSON has no
-     * date type — over the wire these arrive as ISO strings. A bare `z.date()`
-     * therefore passes in the browser and fails on the server, so accept both
-     * and normalise. The `.pipe` keeps the existing display-string transform.
+     * Handles Date instances, ISO strings, timestamps, or empty string/null
+     * gracefully without throwing invalid_date on drafts or exported files.
      */
     date: z
         .union([z.date(), z.string(), z.number()])
-        .pipe(z.coerce.date())
-        .transform((date) =>
-            new Date(date).toLocaleDateString("en-US", DATE_OPTIONS)
-        ),
+        .optional()
+        .nullable()
+        .transform((val) => {
+            if (!val || (typeof val === "string" && val.trim() === "")) return "";
+            const d = new Date(val);
+            if (isNaN(d.getTime())) return "";
+            return d.toLocaleDateString("en-US", DATE_OPTIONS);
+        }),
 
     // Items
     quantity: z.coerce
         .number()
-        .gt(0, { message: "Must be a number greater than 0" }),
+        .gte(0, { message: "Must be a non-negative number" }),
     unitPrice: z.coerce
         .number()
-        .gt(0, { message: "Must be a number greater than 0" })
+        .gte(0, { message: "Must be a non-negative number" })
         .lte(Number.MAX_SAFE_INTEGER, { message: `Must be ≤ ${Number.MAX_SAFE_INTEGER}` }),
 
     // Strings
@@ -132,7 +134,7 @@ const ItemSchema = z.object({
 
 const PaymentQrSchema = z.object({
     enabled: z.boolean().optional(),
-    type: z.enum(["upi", "paypal", "stripe", "iban", "custom"]).optional(),
+    type: z.enum(["upi", "paypal", "stripe", "iban", "custom"]).or(z.literal("")).optional(),
     value: fieldValidators.stringOptional,
     title: fieldValidators.stringOptional,
 });
@@ -146,18 +148,18 @@ const PaymentInformationSchema = z.object({
 
 const DiscountDetailsSchema = z.object({
     amount: fieldValidators.stringToNumberWithMax,
-    amountType: fieldValidators.string,
+    amountType: fieldValidators.stringOptional,
 });
 
 const TaxDetailsSchema = z.object({
     amount: fieldValidators.stringToNumberWithMax,
-    taxID: fieldValidators.string,
-    amountType: fieldValidators.string,
+    taxID: fieldValidators.stringOptional,
+    amountType: fieldValidators.stringOptional,
 });
 
 const ShippingDetailsSchema = z.object({
     cost: fieldValidators.stringToNumberWithMax,
-    costType: fieldValidators.string,
+    costType: fieldValidators.stringOptional,
 });
 
 const SignatureSchema = z.object({
@@ -166,6 +168,7 @@ const SignatureSchema = z.object({
     // restricted to the fonts the UI actually offers.
     fontFamily: z
         .enum(SIGNATURE_FONTS.map((font) => font.name) as [string, ...string[]])
+        .or(z.literal(""))
         .optional(),
 });
 
@@ -205,12 +208,12 @@ const InvoiceDetailsSchema = z.object({
     shippingDetails: ShippingDetailsSchema.optional(),
     subTotal: fieldValidators.nonNegativeNumber,
     totalAmount: fieldValidators.nonNegativeNumber,
-    totalAmountInWords: fieldValidators.string,
+    totalAmountInWords: fieldValidators.stringOptional,
     additionalNotes: fieldValidators.stringOptional,
-    paymentTerms: fieldValidators.stringMin1,
+    paymentTerms: fieldValidators.stringOptional,
     signature: SignatureSchema.optional(),
     updatedAt: fieldValidators.stringOptional,
-    pdfTemplate: z.number(),
+    pdfTemplate: z.coerce.number(),
 });
 
 const InvoiceSchema = z.object({

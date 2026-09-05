@@ -4,7 +4,7 @@ import { QRCodeSVG } from "qrcode.react";
 export type PaymentQrType = "upi" | "paypal" | "stripe" | "iban" | "custom";
 
 export type PaymentQrCodeProps = {
-    type?: PaymentQrType;
+    type?: PaymentQrType | "";
     value?: string;
     title?: string;
     amount?: number | string;
@@ -22,7 +22,7 @@ export function formatPaymentQrValue({
     currency = "USD",
     receiverName = "",
 }: {
-    type?: PaymentQrType;
+    type?: PaymentQrType | "";
     value?: string;
     amount?: number | string;
     currency?: string;
@@ -30,8 +30,9 @@ export function formatPaymentQrValue({
 }): string {
     const cleanValue = (value || "").trim();
     if (!cleanValue) return "";
+    const activeType = type || "custom";
 
-    if (type === "upi") {
+    if (activeType === "upi") {
         if (cleanValue.startsWith("upi://")) return cleanValue;
         const params = new URLSearchParams();
         params.set("pa", cleanValue);
@@ -41,7 +42,7 @@ export function formatPaymentQrValue({
         return `upi://pay?${params.toString()}`;
     }
 
-    if (type === "paypal") {
+    if (activeType === "paypal") {
         if (cleanValue.startsWith("http://") || cleanValue.startsWith("https://")) {
             return cleanValue;
         }
@@ -50,14 +51,14 @@ export function formatPaymentQrValue({
         return `https://paypal.me/${username}${amt}`;
     }
 
-    if (type === "stripe") {
+    if (activeType === "stripe") {
         if (cleanValue.startsWith("http://") || cleanValue.startsWith("https://")) {
             return cleanValue;
         }
         return `https://${cleanValue}`;
     }
 
-    if (type === "iban") {
+    if (activeType === "iban") {
         if (cleanValue.startsWith("iban:") || cleanValue.startsWith("http")) {
             return cleanValue;
         }
@@ -76,7 +77,7 @@ export const PAYMENT_TYPE_LABELS: Record<PaymentQrType, string> = {
 };
 
 export default function PaymentQrCode({
-    type = "custom",
+    type,
     value = "",
     title,
     amount,
@@ -86,8 +87,9 @@ export default function PaymentQrCode({
     className = "",
     showLabel = true,
 }: PaymentQrCodeProps) {
+    const activeType: PaymentQrType = type ? type : "custom";
     const qrString = formatPaymentQrValue({
-        type,
+        type: activeType,
         value,
         amount,
         currency,
@@ -96,7 +98,7 @@ export default function PaymentQrCode({
 
     if (!qrString) return null;
 
-    const displayTitle = title?.trim() || PAYMENT_TYPE_LABELS[type] || "Scan to Pay";
+    const displayTitle = title?.trim() || PAYMENT_TYPE_LABELS[activeType] || "Scan to Pay";
 
     return (
         <div
