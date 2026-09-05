@@ -13,6 +13,8 @@
     "predev": "node scripts/build-pdf-css.mjs",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
+    "typecheck": "tsc --noEmit",
+    "check": "pnpm build:pdf-css && pnpm typecheck",
     "test:e2e": "playwright test",
     "test:e2e:ui": "playwright test --ui"
   },
