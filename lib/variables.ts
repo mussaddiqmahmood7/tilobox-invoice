@@ -22,7 +22,8 @@ export const BASE_URL = (
   process.env.NEXT_PUBLIC_SITE_URL || "https://invoice.tilobox.com"
 ).replace(/\/$/, "");
 export const AUTHOR_WEBSITE = "https://tilobox.com";
-export const AUTHOR_GITHUB = "https://tilobox.com";
+export const AUTHOR_GITHUB = "https://github.com/mussaddiqmahmood7/Tilobox-Invoice";
+export const GITHUB_REPO_URL = AUTHOR_GITHUB;
 
 /**
  * API endpoints

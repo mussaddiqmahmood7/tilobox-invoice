@@ -6,6 +6,10 @@ import { BrandMark } from "@/app/components/reusables/BrandMark";
 // Next Intl
 import { Link } from "@/i18n/navigation";
 
+// Icons & Variables
+import { Github } from "lucide-react";
+import { GITHUB_REPO_URL } from "@/lib/variables";
+
 const BaseFooter = () => {
     const { _t } = useTranslationContext();
 
@@ -39,7 +43,16 @@ const BaseFooter = () => {
                     </p>
                 </div>
 
-                <nav className="flex items-center gap-4 text-xs sm:text-sm">
+                <nav className="flex flex-wrap items-center justify-center gap-4 text-xs sm:text-sm">
+                    <a
+                        href={GITHUB_REPO_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 font-medium text-muted-foreground transition-colors hover:text-primary"
+                    >
+                        <Github className="h-3.5 w-3.5" />
+                        GitHub Repository
+                    </a>
                     <a
                         href="https://tilobox.com"
                         target="_blank"

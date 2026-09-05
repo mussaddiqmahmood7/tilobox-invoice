@@ -6,6 +6,7 @@ import { BrandMark } from "@/app/components/reusables/BrandMark";
 // Icons
 import {
     ArrowUpRight,
+    Github,
     Globe2,
     Lock,
     Printer,
@@ -15,6 +16,9 @@ import {
     Sparkles,
     Zap,
 } from "lucide-react";
+
+// Variables
+import { GITHUB_REPO_URL } from "@/lib/variables";
 
 type Feature = { title: string; body: string };
 type Faq = { q: string; a: string };
@@ -144,6 +148,15 @@ export default async function LandingContent({
                             <Zap className="h-3.5 w-3.5 text-amber-500" />
                             Make It Offline
                         </span>
+                        <a
+                            href={GITHUB_REPO_URL}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1.5 rounded-full border border-border bg-card/80 px-3.5 py-1 text-xs font-medium text-muted-foreground shadow-2xs transition-colors hover:border-primary/50 hover:text-foreground"
+                        >
+                            <Github className="h-3.5 w-3.5 text-foreground" />
+                            Open Source on GitHub
+                        </a>
                     </div>
                 </div>
 

@@ -30,7 +30,10 @@ import {
 import { useTranslationContext } from "@/contexts/TranslationContext";
 
 // Icons
-import { Settings2 } from "lucide-react";
+import { Github, Settings2 } from "lucide-react";
+
+// Variables
+import { GITHUB_REPO_URL } from "@/lib/variables";
 
 const BaseNavbar = () => {
     const devEnv = useMemo(() => {
@@ -72,6 +75,16 @@ const BaseNavbar = () => {
                     <PwaStatusBadge />
                     <LanguageSelector />
                     <ThemeSwitcher />
+                    <a
+                        href={GITHUB_REPO_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-border bg-card/60 text-muted-foreground transition-colors hover:border-primary/40 hover:bg-card hover:text-foreground"
+                        aria-label="Star on GitHub"
+                        title="Star on GitHub"
+                    >
+                        <Github className="h-4 w-4" />
+                    </a>
                 </div>
 
                 {/*
@@ -104,6 +117,24 @@ const BaseNavbar = () => {
                                         {_t("navbar.language")}
                                     </span>
                                     <LanguageSelector variant="block" />
+                                </div>
+
+                                <div className="flex flex-col gap-2">
+                                    <span className="text-sm text-muted-foreground">
+                                        Open Source
+                                    </span>
+                                    <a
+                                        href={GITHUB_REPO_URL}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="flex items-center justify-between rounded-lg border border-border bg-card/60 px-3.5 py-2.5 text-sm font-medium text-foreground transition-colors hover:border-primary/40 hover:bg-card"
+                                    >
+                                        <div className="flex items-center gap-2.5">
+                                            <Github className="h-4 w-4 text-primary" />
+                                            <span>GitHub Repository</span>
+                                        </div>
+                                        <span className="text-xs font-semibold text-primary">⭐ Star</span>
+                                    </a>
                                 </div>
 
                                 {devEnv && <DevDebug />}

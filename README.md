@@ -1,7 +1,19 @@
 # TiloBox Invoice
 
-> **Free, Fast & Secure In-Browser Invoice & Thermal Receipt Generator**  
-> *Built with open-source love • Based on Invoify • Maintained & Enhanced by TiloBox*
+<p align="center">
+  <a href="https://invoice.tilobox.com"><img src="https://img.shields.io/badge/Live_Demo-invoice.tilobox.com-0b5fa5?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Demo" /></a>
+  <a href="https://github.com/mussaddiqmahmood7/Tilobox-Invoice/stargazers"><img src="https://img.shields.io/github/stars/mussaddiqmahmood7/Tilobox-Invoice?style=for-the-badge&logo=github&color=0b5fa5" alt="GitHub Stars" /></a>
+  <a href="https://github.com/mussaddiqmahmood7/Tilobox-Invoice/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge" alt="MIT License" /></a>
+  <img src="https://img.shields.io/badge/Next.js_15-black?style=for-the-badge&logo=next.js&logoColor=white" alt="Next.js 15" />
+  <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS" />
+  <img src="https://img.shields.io/badge/PRs-Welcome-brightgreen?style=for-the-badge" alt="PRs Welcome" />
+</p>
+
+> **Free, Fast & Secure In-Browser Invoice & 80mm Thermal Receipt Generator**  
+> *100% In-Browser Privacy • Zero Database • Offline-First PWA • Built with Next.js 15 & Tailwind CSS*
+
+⭐ **If you find this project useful, please consider giving it a star on GitHub — it helps the project grow!**
 
 TiloBox Invoice is a modern, zero-database, client-side billing web tool built with Next.js 15, TypeScript, React, and Tailwind CSS / shadcn/ui. Designed for freelancers, agencies, consultants, retail stores, cafes, and small businesses, it lets you generate professional PDF invoices and 80mm thermal POS receipts straight from your browser.
 
