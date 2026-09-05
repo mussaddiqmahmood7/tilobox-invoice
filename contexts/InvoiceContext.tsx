@@ -307,14 +307,13 @@ export const InvoiceContextProvider = ({
    * @throws {Error} - If an error occurs during the PDF generation process.
    */
   const generatePdf = useCallback(async (data: InvoiceType) => {
-    // Offline fallback: Direct browser print / save to PDF
+    // Offline fallback: Explain clearly and suggest offline browser print/save
     if (typeof navigator !== "undefined" && !navigator.onLine) {
       newToast({
         title: "Working Offline",
-        description: "Opening print dialog. You can print directly or choose 'Save as PDF'.",
+        description: "PDF compilation requires an internet connection. Use 'Print / Save (Offline)' to print or save your invoice directly from your browser.",
         variant: "default",
       });
-      window.print();
       return;
     }
 
@@ -342,9 +341,11 @@ export const InvoiceContextProvider = ({
        * successful generation.
        */
       if (!response.ok) {
-        throw new Error(
-          `PDF generation failed with status ${response.status}`,
-        );
+        const errorData = await response.json().catch(() => null);
+        const detail =
+          errorData?.error ||
+          `PDF generation failed with status ${response.status}`;
+        throw new Error(detail);
       }
 
       const result = await response.blob();
@@ -361,11 +362,12 @@ export const InvoiceContextProvider = ({
       }
       console.error(err);
       newToast({
-        title: "Print / Save as PDF",
-        description: "Server render failed. Opening browser print so you can save or print your invoice directly.",
-        variant: "default",
+        title: "PDF Generation Failed",
+        description:
+          (err as Error)?.message ||
+          "Could not generate invoice PDF. Please try again.",
+        variant: "destructive",
       });
-      window.print();
     } finally {
       if (generateAbortRef.current === controller) {
         generateAbortRef.current = null;

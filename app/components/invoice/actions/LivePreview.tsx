@@ -118,7 +118,7 @@ function LivePreview({ data, fit = true }: LivePreviewProps) {
              * tinted ground — the shape says what it is. Kept below `shell`,
              * where the preview shares a plain background with the form.
              */}
-            <div className="shell:hidden">
+            <div className="no-print shell:hidden">
                 <Subheading>{_t("actions.livePreview")}:</Subheading>
             </div>
 
@@ -130,8 +130,9 @@ function LivePreview({ data, fit = true }: LivePreviewProps) {
              *               keep a scrollbar for space the transform gave back
              *   content   — the sheet itself, scaled from its top edge
              */}
-            <div ref={paneRef} className="shell:h-full">
+            <div ref={paneRef} className="invoice-live-preview-wrapper shell:h-full print:h-auto print:overflow-visible">
                 <div
+                    className="print:!h-auto print:!overflow-visible"
                     style={
                         isShell && scaledHeight
                             ? { height: scaledHeight }
@@ -157,7 +158,7 @@ function LivePreview({ data, fit = true }: LivePreviewProps) {
                          * In the shell this is the "paper": bounded width,
                          * centred on the ground, with a shadow so it lifts.
                          */
-                        className="invoice-live-preview my-1 overflow-hidden rounded-xl border border-border shell:mx-auto shell:my-0 shell:w-[46rem] shell:border-black/5 shell:shadow-elevated"
+                        className="invoice-live-preview printable-invoice my-1 overflow-hidden rounded-xl border border-border shell:mx-auto shell:my-0 shell:w-[46rem] shell:border-black/5 shell:shadow-elevated print:m-0 print:w-full print:max-w-none print:border-none print:rounded-none print:shadow-none print:!transform-none"
                     >
                         <DynamicInvoiceTemplate
                             {...data}

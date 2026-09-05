@@ -76,12 +76,16 @@ const InvoiceMain = () => {
                         "shell:h-[calc(100dvh-4rem)] shell:grid-cols-[minmax(0,34fr)_minmax(0,66fr)] shell:items-stretch shell:gap-0 shell:overflow-hidden",
                     ].join(" ")}
                 >
-                    <InvoiceForm />
+                    <div className="no-print invoice-form-rail">
+                        <InvoiceForm />
+                    </div>
                     <InvoiceActions />
                 </div>
 
                 {/* Sticky Preview / Generate bar, below xl only */}
-                <MobileActionBar />
+                <div className="no-print">
+                    <MobileActionBar />
+                </div>
             </form>
         </Form>
     );

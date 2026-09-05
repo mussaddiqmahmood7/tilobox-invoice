@@ -271,3 +271,95 @@
     transition: none;
   }
 }
+
+/* ──────────────────────────────────────────────
+   Print Stylesheet
+   Strictly isolates the invoice document and hides
+   all application chrome (navbar, footer, landing, forms).
+   ────────────────────────────────────────────── */
+@media print {
+  /* Hide all non-invoice website chrome */
+  header,
+  footer,
+  nav,
+  aside,
+  .no-print,
+  .invoice-form-rail,
+  .invoice-actions-toolbar,
+  .invoice-actions-secondary,
+  .mobile-action-bar,
+  .landing-content,
+  .toaster,
+  [data-sonner-toaster],
+  [role="dialog"]:not(.printable-dialog),
+  [data-radix-popper-content-wrapper],
+  [aria-live="polite"] {
+    display: none !important;
+  }
+
+  /* Reset document and viewport margins */
+  html,
+  body {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+    overflow: visible !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Flatten layout grids and height-restricted containers */
+  main,
+  form,
+  .grid,
+  .min-w-0,
+  [class*="shell:"] {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+  }
+
+  /* Unconstrain preview wrapper */
+  .invoice-preview-wrapper,
+  .invoice-live-preview-wrapper {
+    display: block !important;
+    height: auto !important;
+    overflow: visible !important;
+    transform: none !important;
+  }
+
+  /* Force the invoice to render crisp, full-bleed/centered, unscaled, borderless */
+  .printable-invoice,
+  .invoice-live-preview {
+    display: block !important;
+    visibility: visible !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    transform: none !important;
+    background: #ffffff !important;
+    page-break-after: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* Remove all click-to-edit outlines/hover styling in print */
+  .invoice-live-preview [data-edit-field] {
+    outline: none !important;
+    background: transparent !important;
+    cursor: default !important;
+  }
+}

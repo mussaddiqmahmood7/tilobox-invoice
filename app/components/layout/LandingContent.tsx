@@ -95,7 +95,7 @@ export default async function LandingContent({
     ];
 
     return (
-        <section className="relative overflow-hidden border-t border-border bg-gradient-to-b from-background via-card/50 to-background py-16 sm:py-24">
+        <section className="no-print landing-content relative overflow-hidden border-t border-border bg-gradient-to-b from-background via-card/50 to-background py-16 sm:py-24">
             {/* Ambient Background Glow */}
             <div
                 aria-hidden="true"

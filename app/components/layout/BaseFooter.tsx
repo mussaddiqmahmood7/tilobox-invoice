@@ -15,7 +15,7 @@ const BaseFooter = () => {
 
     return (
         // pb clears the sticky MobileActionBar, which only renders below xl
-        <footer className="border-t border-border bg-card/30 backdrop-blur-xs">
+        <footer className="no-print border-t border-border bg-card/30 backdrop-blur-xs">
             <div className="container flex flex-col items-center justify-between gap-4 py-8 pb-28 text-sm text-muted-foreground sm:flex-row xl:pb-8">
                 <div className="flex flex-wrap items-center justify-center gap-3 sm:justify-start">
                     <a

@@ -45,7 +45,7 @@ const BaseNavbar = () => {
     const { _t } = useTranslationContext();
 
     return (
-        <header className="sticky top-0 z-50 border-b border-border bg-background/85 backdrop-blur supports-[backdrop-filter]:bg-background/70">
+        <header className="no-print sticky top-0 z-50 border-b border-border bg-background/85 backdrop-blur supports-[backdrop-filter]:bg-background/70">
             <nav className="container flex h-16 items-center justify-between gap-4">
                 <Link
                     href="/"

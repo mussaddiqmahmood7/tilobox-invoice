@@ -154,7 +154,7 @@ const InvoiceActions = () => {
                 {/*
                  * Toolbar above the preview — desktop only.
                  */}
-                <div className="mb-3 hidden items-center justify-between gap-3 xl:flex shell:px-5 shell:pt-5">
+                <div className="no-print invoice-actions-toolbar mb-3 hidden items-center justify-between gap-3 xl:flex shell:px-5 shell:pt-5">
                     <div className="flex flex-wrap items-center gap-2">
                         <FormatToggle />
                         {isDesktop && !isReceipt && (
@@ -235,18 +235,20 @@ const InvoiceActions = () => {
                 </div>
 
                 {/*
-                 * Live preview / final PDF — desktop only.
-                 *
-                 * In the shell this pane owns its own scrollbar. A long invoice
-                 * is scrolled here rather than by moving the whole page, which
-                 * is what keeps the form and the toolbar in place while you
-                 * read down the document.
+                 * Live preview / final PDF — desktop only on screen, always visible in print.
                  */}
-                <div className="hidden xl:block shell:min-h-0 shell:flex-1 shell:overflow-y-auto shell:overscroll-contain shell:px-8 shell:pb-8">
+                <div className="hidden xl:block print:block print:w-full print:p-0 print:m-0 print:overflow-visible shell:min-h-0 shell:flex-1 shell:overflow-y-auto shell:overscroll-contain shell:px-8 shell:pb-8">
                     {isDesktop ? (
                         <PdfViewer fit={fitToPane} />
                     ) : (
-                        <Skeleton className="min-h-[30rem] w-full rounded-xl" />
+                        <>
+                            <div className="print:hidden">
+                                <Skeleton className="min-h-[30rem] w-full rounded-xl" />
+                            </div>
+                            <div className="hidden print:block">
+                                <PdfViewer fit={false} />
+                            </div>
+                        </>
                     )}
                 </div>
 
@@ -255,7 +257,7 @@ const InvoiceActions = () => {
                  * carries the secondary actions. Generate and Preview live in
                  * the sticky MobileActionBar.
                  */}
-                <div className="xl:hidden">
+                <div className="no-print invoice-actions-secondary xl:hidden">
                     <div className="border-t border-border pt-5">
                         <h2 className="mb-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
                             {_t("actions.title")}
