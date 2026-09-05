@@ -361,7 +361,12 @@ export const InvoiceContextProvider = ({
         return;
       }
       console.error(err);
-      pdfGenerationError();
+      newToast({
+        title: "Print / Save as PDF",
+        description: "Server render failed. Opening browser print so you can save or print your invoice directly.",
+        variant: "default",
+      });
+      window.print();
     } finally {
       if (generateAbortRef.current === controller) {
         generateAbortRef.current = null;

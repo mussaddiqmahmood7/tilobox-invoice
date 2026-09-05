@@ -1,4 +1,5 @@
 import type { Browser } from "puppeteer-core";
+import fs from "node:fs";
 
 
 /**
@@ -31,6 +32,49 @@ function isServerless(): boolean {
     );
 }
 
+function findLocalExecutable(): string | undefined {
+    if (process.env.PUPPETEER_EXECUTABLE_PATH && fs.existsSync(process.env.PUPPETEER_EXECUTABLE_PATH)) {
+        return process.env.PUPPETEER_EXECUTABLE_PATH;
+    }
+
+    const candidatePaths: string[] = [];
+
+    if (process.platform === "win32") {
+        const programFiles = process.env.ProgramFiles || "C:\\Program Files";
+        const programFilesX86 = process.env["ProgramFiles(x86)"] || "C:\\Program Files (x86)";
+        const localAppData = process.env.LOCALAPPDATA || "";
+
+        candidatePaths.push(
+            `${programFiles}\\Google\\Chrome\\Application\\chrome.exe`,
+            `${programFilesX86}\\Google\\Chrome\\Application\\chrome.exe`,
+            `${programFilesX86}\\Microsoft\\Edge\\Application\\msedge.exe`,
+            `${programFiles}\\Microsoft\\Edge\\Application\\msedge.exe`,
+            `${localAppData}\\Google\\Chrome\\Application\\chrome.exe`
+        );
+    } else if (process.platform === "darwin") {
+        candidatePaths.push(
+            "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+            "/Applications/Microsoft Edge.app/Contents/MacOS/Microsoft Edge",
+            "/Applications/Chromium.app/Contents/MacOS/Chromium"
+        );
+    } else {
+        candidatePaths.push(
+            "/usr/bin/google-chrome",
+            "/usr/bin/google-chrome-stable",
+            "/usr/bin/chromium-browser",
+            "/usr/bin/chromium"
+        );
+    }
+
+    for (const candidate of candidatePaths) {
+        if (candidate && fs.existsSync(candidate)) {
+            return candidate;
+        }
+    }
+
+    return undefined;
+}
+
 async function launchBrowser(): Promise<Browser> {
     if (isServerless()) {
         const chromium = (await import("@sparticuz/chromium")).default;
@@ -46,11 +90,15 @@ async function launchBrowser(): Promise<Browser> {
     }
 
     // Everywhere else — local dev, `next start`, a self-hosted server, CI —
-    // use the full `puppeteer` package, which ships its own Chromium.
+    // use the full `puppeteer` package. If a local system browser (Chrome/Edge)
+    // is found, use its executablePath directly to prevent spawn errors on UNC/WSL drives.
     const puppeteer = (await import("puppeteer")).default;
+    const localExecutable = findLocalExecutable();
+
     return puppeteer.launch({
         args: ["--no-sandbox", "--disable-setuid-sandbox"],
         headless: true,
+        ...(localExecutable ? { executablePath: localExecutable } : {}),
     }) as unknown as Promise<Browser>;
 }
 
