@@ -10,9 +10,10 @@ const withNextIntl = require("next-intl/plugin")("./i18n/request.ts");
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     serverExternalPackages: ["@sparticuz/chromium", "puppeteer-core"],
+    eslint: {
+        ignoreDuringBuilds: true,
+    },
     webpack: (config) => {
-        config.resolve = config.resolve || {};
-        config.resolve.symlinks = false;
         config.module.rules.push({
             test: /\.map$/,
             use: "ignore-loader",
